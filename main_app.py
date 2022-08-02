@@ -59,9 +59,8 @@ df = pd.DataFrame({'meal_id': l_id,
                    'price': l_price,
                    'is_vegetarian': l_vegetarian,
                    'is_mensa_international': l_mensaint,
-                   'mensa_int_country': l_mensaint_country,
-                   'is_dinner': l_dinner})
-df.drop_duplicates(subset = ['date', 'meal', 'canteen_id', 'is_dinner'], inplace = True) # Mehrfachabfragen raus
+                   'mensa_int_country': l_mensaint_country})
+df.drop_duplicates(subset = ['date', 'meal', 'canteen_id'], inplace = True) # Mehrfachabfragen raus
 df = df.loc[df['canteen_id']=='1'] # Nur Hauptmensa
 file.close()
 
