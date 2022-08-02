@@ -76,7 +76,7 @@ for date in df['date'].drop_duplicates(inplace = False):
         date_check.append(date)
 
 
-ax.plot(np.arange(length(avg_prices)), avg_prices)
+ax.plot(np.arange(len(avg_prices)), avg_prices)
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 st.pyplot(fig)
