@@ -66,7 +66,7 @@ file.close()
 
 fig, ax = plt.subplots()
 
-ax.plot(1:df['price'].size, df['price'])
+ax.plot(1:(df['price'].size), df['price'])
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 st.pyplot(fig)
