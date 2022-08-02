@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 fig, ax = plt.subplots()
 mensa_data = pd.read_csv('mensa_dump.csv')
