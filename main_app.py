@@ -9,9 +9,7 @@ def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
 @st.cache
-def calculate_average_week_prices():
-        beginning_of_week = monday()
-
+def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
         bar_labels = []
@@ -35,7 +33,7 @@ fig, ax = plt.subplots()
 past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 12, step = 1)
 st.write('Durchschnittspreise:')
 
-avg_prices, bar_labels = calculate_average_week_prices()
+avg_prices, bar_labels = calculate_average_week_prices(monday())
 
 avg_prices.reverse()
 bar_labels.reverse()
