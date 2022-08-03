@@ -9,6 +9,10 @@ from fetcher import *
 def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
+# Dummytag, um tägliches Neuauslesen zu erzwingen
+def effective_day():
+        return (pd.Timestamp.today() - pd.DateOffset(hours=6, minutes=30)).date()
+
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
@@ -31,7 +35,8 @@ def calculate_average_week_prices(beginning_of_week):
         bar_labels.reverse()
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
-df = fetch_data()
+eff_day = effective_day()
+df = fetch_data(eff_day)
 st.write(df.tail(20))
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
