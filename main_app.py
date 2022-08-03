@@ -35,14 +35,13 @@ st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 fig, ax = plt.subplots()
         
 past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 12, step = 1)
+if past_weeks = 0:
+        past_weeks = 12
+
 st.write('Durchschnittspreise:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
-st.write(np.size(avg_prices))
-st.write(np.size(bar_labels))
 avg_prices, bar_labels = avg_filter(avg_prices, bar_labels)
-st.write(np.size(avg_prices))
-st.write(np.size(bar_labels))
 
 ax = sns.barplot(x=bar_labels[:(past_weeks+1)], y=avg_prices[:(past_weeks+1)])
 ax.tick_params(labelsize=7)
