@@ -39,13 +39,9 @@ def calculate_average_week_prices(beginning_of_week):
         bar_labels.reverse()
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
-curr_time = time.time()
 eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
-
-st.write(f'TIMELOG: Datenaktualisierung erledigt in {time.time()-curr_time}ms.')
-curr_time = time.time()
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
@@ -57,28 +53,24 @@ if past_weeks == 0:
 
 st.write('Durchschnittspreise:')
 
-st.write(f'TIMELOG: Technische Vorbereitung erledigt in {time.time()-curr_time}ms.')
-curr_time = time.time()
-
 avg_prices, bar_labels = calculate_average_week_prices(monday())
 
-st.write(f'TIMELOG: Durchschnittliche Wochenpreise erledigt in {time.time()-curr_time}ms.')
-curr_time = time.time()
-
 regression = LinearRegression().fit(np.arange(past_weeks+1).reshape(-1,1), avg_prices[(np.size(bar_labels)-past_weeks-1):])
-
-st.write(f'TIMELOG: Lineare Regression erledigt in {time.time()-curr_time}ms.')
-curr_time = time.time()
 
 plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'avg_prices': avg_prices[(np.size(bar_labels)-past_weeks-1):],
                           'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
-st.write(f'TIMELOG: DataFrame-Erstellung erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
 sns.barplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
+st.write(f'Plot 1 in {time.time()-curr_time}ms.')
+curr_time = time.time()
 sns.lineplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
+st.write(f'Plot 2 in {time.time()-curr_time}ms.')
+curr_time = time.time()
 sns.lineplot(data=plot_data, x='arange_values', y='lin_reg_values', ax=ax, color='#FF0000')
+st.write(f'Plot 3 in {time.time()-curr_time}ms.')
+curr_time = time.time()
 sns.set_theme(style='whitegrid')
 ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
