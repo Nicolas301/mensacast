@@ -36,7 +36,7 @@ st.write('Durchschnittspreise:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
 
-ax = sns.barplot(x=filter(lambda x: x > 0 ,bar_labels[:(past_weeks+1)]), y=filter(lambda x: x != 'null', avg_prices[:(past_weeks+1)]))
+ax = sns.barplot(x=bar_labels[:(past_weeks+1)], y=avg_prices[:(past_weeks+1)])
 ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
