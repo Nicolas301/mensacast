@@ -5,12 +5,12 @@ import seaborn as sns
 import pandas as pd
 from fetcher import *
 
-def beginning_of_week():
+def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
 @st.cache
 def calculate_average_week_prices():
-        beginning_of_week = beginning_of_week()
+        beginning_of_week = monday()
 
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
