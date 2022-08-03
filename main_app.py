@@ -23,7 +23,7 @@ for date in df['date'].drop_duplicates(inplace = False):
 ax.plot(np.arange(len(avg_prices)), avg_prices)
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
-st.write('Monatliche Durchschnittspreise seit 2021'):
+st.write('Monatliche Durchschnittspreise seit 2021:')
 st.pyplot(fig)
 st.write(df.describe())
 st.write('Test')
