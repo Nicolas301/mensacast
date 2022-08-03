@@ -52,7 +52,7 @@ ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
 
-ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%2f €'))
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%0f €'))
 st.pyplot(fig)
 
 
