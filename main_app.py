@@ -39,8 +39,8 @@ st.write('Durchschnittspreise:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
 avg_prices, bar_labels = avg_filter(avg_prices, bar_labels)
-st.write(len(avg_prices))
-st.write(len(bar_labels))
+st.write(np.size(avg_prices))
+st.write(np.size(bar_labels))
 
 ax = sns.barplot(x=bar_labels[:(past_weeks+1)], y=avg_prices[:(past_weeks+1)])
 ax.tick_params(labelsize=7)
