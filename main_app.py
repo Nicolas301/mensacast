@@ -12,7 +12,7 @@ avg_prices = []
 date_check = []
 
 for date in df['date'].drop_duplicates(inplace = False):
-    if(data<pd.to_datetime('1/1/2021')):
+    if(data<pd.Timestamp(year = 2021, month = 1, day = 1)):
         continue
     res_df = df.loc[(date-pd.DateOffset(days=30)<=df['date'])&(df['date']<=date)]
     if len(res_df.index) > 0:
