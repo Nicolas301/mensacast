@@ -20,7 +20,7 @@ def calculate_average_week_prices(beginning_of_week):
             bar_labels.append(f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
           else:
             avg_prices.append(0)
-            bar_prices.append('null')
+            bar_labels.append('null')
           iterated_week = iterated_week - pd.DateOffset(days=7)
 
         return avg_prices, bar_labels
