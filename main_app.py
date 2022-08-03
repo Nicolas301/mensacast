@@ -33,6 +33,7 @@ avg_prices.reverse()
 bar_labels.reverse()
 
 ax = sns.barplot(x=bar_labels, y=avg_prices)
-for bar in ax.containers:
-  ax.bar_label(bar, f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
+ax.set(label='small')
+for label in ax.get_xticklabels():
+  label.set_rotation(90)
 st.pyplot(fig)
