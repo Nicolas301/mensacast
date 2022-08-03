@@ -1,5 +1,6 @@
 import pandas as pd
 
+@st.cache
 def fetch_data():
   file = open('mensa_dump.csv', mode='r', encoding='utf-8')
 
