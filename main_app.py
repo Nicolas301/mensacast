@@ -50,6 +50,9 @@ sns.lineplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np
 ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
+
+y_ticks = ax.get_yticklabels()
+ax.set_yticklables([f'{y} €' for y in y_ticks])
 st.pyplot(fig)
 
 
