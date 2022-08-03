@@ -21,6 +21,8 @@ date_check = []
         
 past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 4, max_value = 52, value = 12, step = 1)
 
+beginning_of_week = (pd.Timestamp.today - pd.DateOffset(days=pd.Timestamp.today.dayofweek)).date
+
 ax.plot(np.arange(len(avg_prices)), avg_prices)
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
