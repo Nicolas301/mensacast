@@ -32,6 +32,7 @@ def calculate_average_week_prices(beginning_of_week):
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
 df = fetch_data()
+st.write(df.tail(20))
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
