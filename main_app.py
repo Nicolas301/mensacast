@@ -59,7 +59,7 @@ ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
 
-regression = LinearRegression().fit(np.arange(past_weeks+1), avg_prices[(np.size(bar_labels)-past_weeks-1):])
+regression = LinearRegression().fit(np.arange(past_weeks+1).reshape(-1,1), avg_prices[(np.size(bar_labels)-past_weeks-1):])
 st.write(regression.coef_[0])
 st.write(regression.intercept_)
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
