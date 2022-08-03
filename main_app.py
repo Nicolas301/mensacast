@@ -32,7 +32,7 @@ fig, ax = plt.subplots()
 past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 12, step = 1)
 st.write('Durchschnittspreise:')
 
-avg_prices, bar_labels = calculate_average_week_price()
+avg_prices, bar_labels = calculate_average_week_prices()
 
 avg_prices.reverse()
 bar_labels.reverse()
