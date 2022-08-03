@@ -31,5 +31,4 @@ for i in range(past_weeks+1):
 avg_prices.reverse()
 
 ax = sns.barplot(x=np.arange(past_weeks+1), y=avg_prices)
-fig.set_xticklabels(bar_labels)
 st.pyplot(fig)
