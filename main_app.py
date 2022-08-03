@@ -50,4 +50,4 @@ ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
 st.pyplot(fig)
-st.write(f'Debugwert: {df.size}')
+st.write(f'Debugwert: {df.size}, erwartet: 24272')
