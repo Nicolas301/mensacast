@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 
 @st.cache
 def fetch_data():
