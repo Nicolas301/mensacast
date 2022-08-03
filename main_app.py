@@ -21,7 +21,7 @@ avg_prices = []
 bar_labels = []
 for i in range(past_weeks+1):
   df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
-  bar_labels.append('Test')
+  bar_labels.append(i**2)
   if(df_week['date'].size>0):
     avg_prices.append(np.mean(df_week['price']))
   else:
