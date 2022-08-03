@@ -7,6 +7,7 @@ import matplotlib.ticker as ticker
 from sklearn.linear_model import LinearRegression
 from fetcher import *
 import time
+import os
 
 def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
