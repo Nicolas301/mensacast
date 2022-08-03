@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 import pandas as pd
 from fetcher import *
 
@@ -29,6 +30,6 @@ for i in range(past_weeks+1):
 
 avg_prices.reverse()
 
-ax.bar(np.arange(past_weeks+1), avg_prices)
+ax = sns.barplot(x=np.arange(past_weeks+1), y=avg_prices)
 fig.set_xticklabels(bar_labels)
 st.pyplot(fig)
