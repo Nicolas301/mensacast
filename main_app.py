@@ -16,7 +16,7 @@ st.write('Durchschnittspreise:')
 beginning_of_week = (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 st.write(df['date'].dtype)
 
-iterated_week = beginning_of_week
+iterated_week = pd.Timestamp(beginning_of_week)
 avg_prices = []
 for i in range(past_weeks+1):
   df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
