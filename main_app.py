@@ -24,6 +24,7 @@ for i in range(past_weeks+1):
     avg_prices.append(np.mean(df_week['price']))
   else:
     avg_prices.append(0)
+  iterated_week = iterated_week - pd.DateOffset(days=7)
 
 ax.bar(np.arange(past_weeks+1), avg_prices)
 
