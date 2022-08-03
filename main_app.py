@@ -46,6 +46,7 @@ avg_prices, bar_labels = calculate_average_week_prices(monday())
 avg_prices, bar_labels = avg_filter(avg_prices, bar_labels)
 
 sns.barplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np.size(bar_labels)-past_weeks-1):], ax = ax)
+sns.lineplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np.size(bar_labels)-past_weeks-1):], ax = ax)
 ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
