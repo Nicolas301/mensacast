@@ -8,7 +8,7 @@ from fetcher import *
 def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
