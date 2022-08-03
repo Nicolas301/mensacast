@@ -14,7 +14,7 @@ past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3
 st.write('Durchschnittspreise:')
 
 beginning_of_week = (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
-st.write(df.dtypes)
+st.write(df['date'].dtype)
 
 iterated_week = beginning_of_week
 avg_prices = []
