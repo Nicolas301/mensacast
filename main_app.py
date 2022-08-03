@@ -19,7 +19,7 @@ def calculate_average_week_prices(beginning_of_week):
                 iter_distance = missing_values
                 missing_values = 0
                 for i in range(iter_distance):
-                  df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
+                  df_week = df[(iterated_week<=pd.to_datetime(df['date']))&(pd.to_datetime(df['date'])<=(iterated_week+pd.DateOffset(days=5)))]
                   if(df_week['date'].size>0):
                     avg_prices.append(np.mean(df_week['price']))
                     bar_labels.append(f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
