@@ -6,27 +6,24 @@ from fetcher import *
 
 df = fetch_data()
 
+st.write('Hier entsteht das DataMining-Projekt MensaCast.')
+
 fig, ax = plt.subplots()
-
-avg_prices = []
-date_check = []
-
-#for date in df['date'].drop_duplicates(inplace = False):
-#    if(date<pd.Timestamp(year = 2021, month = 1, day = 1)):
-#        continue
-#    res_df = df.loc[(date-pd.DateOffset(days=30)<=df['date'])&(df['date']<=date)]
-#    if len(res_df.index) > 0:
-#        avg_prices.append(np.sum(res_df['price'].astype(float))/len(res_df.index))
-#        date_check.append(date)
         
-past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 4, max_value = 52, value = 12, step = 1)
+past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 12, step = 1)
+st.write('Durchschnittspreise:')
 
 beginning_of_week = (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
-st.write(beginning_of_week)
 
-ax.plot(np.arange(len(avg_prices)), avg_prices)
+iterated_week = beginning_of_week
+avg_prices = []
+for i in range(past_weeks+1):
+  df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
+  if(df_week['date'].size>0):
+    avg_prices.append(np.mean(df_week['price']))
+  else:
+    avg_prices.append(0)
 
-st.write('Hier entsteht das DataMining-Projekt MensaCast.')
-st.write('Monatliche Durchschnittspreise seit 2021:')
+ax.bar(np.arange(past_weeks+1), avg_prices)
+
 st.pyplot(fig)
-st.write(df.describe())
