@@ -37,9 +37,9 @@ st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
 fig, ax = plt.subplots()
         
-past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 12, step = 1)
+past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 11, step = 1)
 if past_weeks == 0:
-        past_weeks = 12
+        past_weeks = 11
 
 st.write('Durchschnittspreise:')
 
