@@ -32,7 +32,7 @@ avg_prices.reverse()
 bar_labels.reverse()
 
 ax = sns.barplot(x=bar_labels, y=avg_prices)
-ax.tick_params(labelsize=4)
+ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
 st.pyplot(fig)
