@@ -38,6 +38,8 @@ past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3
 st.write('Durchschnittspreise:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
+st.write(np.size(avg_prices))
+st.write(np.size(bar_labels))
 avg_prices, bar_labels = avg_filter(avg_prices, bar_labels)
 st.write(np.size(avg_prices))
 st.write(np.size(bar_labels))
