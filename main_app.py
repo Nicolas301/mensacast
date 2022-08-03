@@ -30,5 +30,6 @@ for i in range(past_weeks+1):
 avg_prices.reverse()
 
 ax.bar(np.arange(past_weeks+1), avg_prices)
+ax.bar_labels(bar_labels)
 
 st.pyplot(fig)
