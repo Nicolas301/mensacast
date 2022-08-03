@@ -9,9 +9,6 @@ from fetcher import *
 def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
-def avg_filter(p1, p2):
-        return p1[p1!=0], p2[p2!='null']
-
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
@@ -28,9 +25,7 @@ def calculate_average_week_prices(beginning_of_week):
                     bar_labels.append(f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
                   else:
                     missing_values += 1
-                    avg_prices.append(0)
-                    bar_labels.append('null')
-                iterated_week = iterated_week - pd.DateOffset(days=7)
+                  iterated_week = iterated_week - pd.DateOffset(days=7)
         
         avg_prices.reverse()
         bar_labels.reverse()
@@ -49,7 +44,6 @@ if past_weeks == 0:
 st.write('Durchschnittspreise:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
-avg_prices, bar_labels = avg_filter(avg_prices, bar_labels)
 
 sns.barplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np.size(bar_labels)-past_weeks-1):], ax = ax)
 sns.lineplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np.size(bar_labels)-past_weeks-1):], ax = ax)
