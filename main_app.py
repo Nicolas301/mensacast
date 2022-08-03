@@ -12,7 +12,7 @@ def calculate_average_week_prices():
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
         bar_labels = []
-        for i in range(past_weeks+1):
+        for i in range(52):
           df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
           bar_labels.append(f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
           if(df_week['date'].size>0):
@@ -37,7 +37,7 @@ avg_prices, bar_labels = calculate_average_week_prices()
 avg_prices.reverse()
 bar_labels.reverse()
 
-ax = sns.barplot(x=bar_labels, y=avg_prices)
+ax = sns.barplot(x=bar_labels[:(past_weeks+1)], y=avg_prices[:(past_weeks+1)])
 ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
