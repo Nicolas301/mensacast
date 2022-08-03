@@ -17,15 +17,19 @@ def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
         bar_labels = []
-        for i in range(52):
-          df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
-          if(df_week['date'].size>0):
-            avg_prices.append(np.mean(df_week['price']))
-            bar_labels.append(f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
-          else:
-            avg_prices.append(0)
-            bar_labels.append('null')
-            i -= 1
+        missing_values = 52
+        while missing_values > 0:
+                missing_values = 0
+                for i in range(missing_values):
+                  df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
+                  if(df_week['date'].size>0):
+                    avg_prices.append(np.mean(df_week['price']))
+                    bar_labels.append(f'{iterated_week.strftime("%d.%m.%Y")} - {(iterated_week+pd.DateOffset(days=4)).strftime("%d.%m.%Y")}')
+                  else:
+                    missing_values += 1
+                    avg_prices.append(0)
+                    bar_labels.append('null')
+            
           iterated_week = iterated_week - pd.DateOffset(days=7)
         
         avg_prices.reverse()
