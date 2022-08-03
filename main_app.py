@@ -52,7 +52,7 @@ for label in ax.get_xticklabels():
   label.set_rotation(90)
 
 y_ticks = ax.get_yticklabels()
-ax.set_yticklabels([f'{y} €' for y in y_ticks])
+ax.set_yticklabels([f'{y}0 €' for y in y_ticks])
 st.pyplot(fig)
 
 
