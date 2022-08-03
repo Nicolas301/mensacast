@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import matplotlib.ticker as ticker
 from fetcher import *
 
 def monday():
@@ -51,9 +52,7 @@ ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
 
-y_ticks = ax.get_yticklabels()
-st.write(y_ticks[0])
-ax.set_yticklabels([f'{y}0 €' for y in y_ticks])
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%0.0e'))
 st.pyplot(fig)
 
 
