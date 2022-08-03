@@ -32,5 +32,5 @@ avg_prices.reverse()
 
 ax = sns.barplot(x=bar_labels, y=avg_prices)
 for label in ax.get_xticklabels():
-  label.set_rotation(45)
+  label.set_rotation(90)
 st.pyplot(fig)
