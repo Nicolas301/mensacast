@@ -26,6 +26,8 @@ for i in range(past_weeks+1):
     avg_prices.append(0)
   iterated_week = iterated_week - pd.DateOffset(days=7)
 
+avg_prices.reverse()
+
 ax.bar(np.arange(past_weeks+1), avg_prices)
 
 st.pyplot(fig)
