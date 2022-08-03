@@ -29,8 +29,7 @@ def calculate_average_week_prices(beginning_of_week):
                     missing_values += 1
                     avg_prices.append(0)
                     bar_labels.append('null')
-            
-          iterated_week = iterated_week - pd.DateOffset(days=7)
+                iterated_week = iterated_week - pd.DateOffset(days=7)
         
         avg_prices.reverse()
         bar_labels.reverse()
