@@ -29,6 +29,7 @@ for i in range(past_weeks+1):
   iterated_week = iterated_week - pd.DateOffset(days=7)
 
 avg_prices.reverse()
+bar_labels.reverse()
 
 ax = sns.barplot(x=bar_labels, y=avg_prices)
 for label in ax.get_xticklabels():
