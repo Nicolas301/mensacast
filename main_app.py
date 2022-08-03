@@ -44,7 +44,7 @@ eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
-print(f'TIMELOG: Datenaktualisierung erledigt in {time.time()-curr_time}ms.')
+st.write(f'TIMELOG: Datenaktualisierung erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
@@ -57,24 +57,24 @@ if past_weeks == 0:
 
 st.write('Durchschnittspreise:')
 
-print(f'TIMELOG: Technische Vorbereitung erledigt in {time.time()-curr_time}ms.')
+st.write(f'TIMELOG: Technische Vorbereitung erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
 
-print(f'TIMELOG: Durchschnittliche Wochenpreise erledigt in {time.time()-curr_time}ms.')
+st.write(f'TIMELOG: Durchschnittliche Wochenpreise erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
 
 regression = LinearRegression().fit(np.arange(past_weeks+1).reshape(-1,1), avg_prices[(np.size(bar_labels)-past_weeks-1):])
 
-print(f'TIMELOG: Lineare Regression erledigt in {time.time()-curr_time}ms.')
+st.write(f'TIMELOG: Lineare Regression erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
 
 plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'avg_prices': avg_prices[(np.size(bar_labels)-past_weeks-1):],
                           'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
-print(f'TIMELOG: DataFrame-Erstellung erledigt in {time.time()-curr_time}ms.')
+st.write(f'TIMELOG: DataFrame-Erstellung erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
 sns.barplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
 sns.lineplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
@@ -87,5 +87,5 @@ ax.set_xlabel('')
 ax.set_ylabel('')
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
 st.pyplot(fig)
-print(f'TIMELOG: Plotten erledigt in {time.time()-curr_time}ms.')
+st.write(f'TIMELOG: Plotten erledigt in {time.time()-curr_time}ms.')
 curr_time = time.time()
