@@ -17,8 +17,10 @@ beginning_of_week = (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.toda
 
 iterated_week = pd.Timestamp(beginning_of_week)
 avg_prices = []
+bar_labels = []
 for i in range(past_weeks+1):
   df_week = df[(iterated_week<=df['date'])&(df['date']<=(iterated_week+pd.DateOffset(days=5)))]
+  bar_labels.append('Test')
   if(df_week['date'].size>0):
     avg_prices.append(np.mean(df_week['price']))
   else:
