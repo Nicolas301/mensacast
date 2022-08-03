@@ -44,6 +44,7 @@ df, fetch_date = fetch_data(eff_day)
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
 print(f'TIMELOG: Datenaktualisierung erledigt in {time.time()-curr_time}ms.')
+os.write('test')
 curr_time = time.time()
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
