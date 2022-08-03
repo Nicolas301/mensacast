@@ -16,6 +16,7 @@ def effective_day():
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
+        print('Ping')
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
         bar_labels = []
@@ -62,11 +63,13 @@ plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
 #sns.barplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np.size(bar_labels)-past_weeks-1):], linewidth = 1, ax = ax)
 #sns.lineplot(x=bar_labels[(np.size(bar_labels)-past_weeks-1):], y=avg_prices[(np.size(bar_labels)-past_weeks-1):], ax = ax)
 sns.barplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
+sns.lineplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
+sns.lineplot(data=plot_data, x='arange_values', y='lin_reg_values', ax=ax, color='#FF0000')
 sns.set_theme(style='whitegrid')
 ax.tick_params(labelsize=7)
 for label in ax.get_xticklabels():
   label.set_rotation(90)
 
-sns.lineplot(np.arange(past_weeks+1),regression.predict(np.arange(past_weeks+1).reshape(-1,1)), ax = ax, color = '#FF0000')
+#sns.lineplot(np.arange(past_weeks+1),regression.predict(np.arange(past_weeks+1).reshape(-1,1)), ax = ax, color = '#FF0000')
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
 st.pyplot(fig)
