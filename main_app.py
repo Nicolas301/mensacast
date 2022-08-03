@@ -36,8 +36,8 @@ def calculate_average_week_prices(beginning_of_week):
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
 eff_day = effective_day()
-df = fetch_data(eff_day)
-st.write(df.tail(20))
+df, fetch_date = fetch_data(eff_day)
+st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
