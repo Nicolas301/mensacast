@@ -73,11 +73,7 @@ for label in ax.get_xticklabels():
 ax.set_xlabel('')
 ax.set_ylabel('')
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
-curr_time = time.time()
 st.pyplot(fig)
 st.write(f'Runtime for matplotlib rendering: {time.time()-curr_time}s.')
-curr_time = time.time()
-altair_test_plot = st.checkbox('Altair-Graph anzeigen (ist in Entwicklung und ersetzt den obigen Graph demnächst)', value = False)
 if altair_test_plot:
         st.write(alt.Chart(plot_data).mark_bar().encode(x='bar_labels',y='avg_prices'))
-st.write(f'Runtime for Altair rendering: {time.time()-curr_time}s.')
