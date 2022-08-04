@@ -77,6 +77,6 @@ st.pyplot(fig)
 altair_test_plot = st.checkbox('Experimentellen Altair-Plot anzeigen', help='Diese Funktion befindet sich in Entwicklung und wird die obige Grafik demnächst ersetzen.')
 if altair_test_plot:
         altair_bar = alt.Chart(plot_data).mark_bar().encode(x='bar_labels',y='avg_prices:Q', sort=plot_data['bar_labels'])
-        altair_line = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='avg_prices:Q',color=alt.value('orange'), sort=plot_data['bar_labels'])
-        altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='lin_reg_values:Q',color=alt.value('red'), sort=plot_data['bar_labels'])
+        altair_line = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='avg_prices:Q',color=alt.value('orange'))
+        altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='lin_reg_values:Q',color=alt.value('red'))
         st.write((altair_bar+altair_line+altair_line_linreg).properties(width=600,height=400))
