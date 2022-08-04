@@ -53,6 +53,8 @@ with tab1:
         fig, ax = plt.subplots()
 
         past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103, value = 11, step = 1)
+        
+        use_bars = st.checkbox('Durchschnittspreise als Balken- statt Liniendiagramm darstellen')
 
         avg_prices, bar_labels = calculate_average_week_prices(monday())
 
