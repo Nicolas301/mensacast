@@ -67,7 +67,7 @@ with tab1:
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 
         custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
-        if not(use_bars):
+        if not(use_lines):
                 avg_plot = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='Durchschnitt', marker=dict(color=plot_data['arange_values'], colorscale = 'RdBu'), showlegend = False)
         else:
                 avg_plot = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='Durchschnitt', line=dict(color='#0000FF'), showlegend = False)
