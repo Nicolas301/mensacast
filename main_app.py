@@ -50,11 +50,14 @@ st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 tab1, tab2, tab3 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche'])
 
 with tab1:
-        df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
-        st.write(df_current_week)
-        
         tab_mon, tab_tue, tab_wed, tab_thu, tab_fri = st.tabs(['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'])
+        start_of_day = pd.to_datetime(monday())
+        with tab_mon:
+               #df_current_day = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
+        end_of_day = start_of_day + np.timedelta64(1,'D')
+        st.write(df_current_week)
+
 
 with tab2:
         fig, ax = plt.subplots()
