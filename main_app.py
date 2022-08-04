@@ -78,5 +78,5 @@ altair_test_plot = st.checkbox('Experimentellen Altair-Plot anzeigen', help='Die
 if altair_test_plot:
         altair_bar = alt.Chart(plot_data).mark_bar().encode(x='bar_labels',y='avg_prices')
         altair_line = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='avg_prices',color=alt.value('orange'))
-        altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x='arange_values',y='lin_reg_values',color=alt.value('red'))
+        altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='lin_reg_values',color=alt.value('red'))
         st.write((altair_bar+altair_line+altair_line_linreg).properties(width=600,height=400))
