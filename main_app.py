@@ -51,7 +51,7 @@ tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponen
 
 with tab1:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
-        tab_mon, tab_tue, tab_wed, tab_thu, tab_fri = st.tabs(['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'])
+        day_of_week = st.selectbox('Wochentag', ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'])
         with tab_mon:
                start_of_day = pd.to_datetime(monday())
         with tab_tue:
@@ -101,4 +101,6 @@ with tab3:
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
+        # st.metric
+
 
