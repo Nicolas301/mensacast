@@ -75,3 +75,15 @@ line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['
 layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199')
 fig = go.Figure(data=[bar_1,line_1,line_2], layout=layout)
 st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
+
+experimental = st.checkbox('Experimentellen Plot anzeigen.')
+if experimental:
+        fig2 = px.area(data=plot_data, x="bar_labels", y="avg_prices")
+        st.plotly_chart(fig2, use_container_width=True, config=dict(displayModeBar=False))
+
+
+
+
+
+
+
