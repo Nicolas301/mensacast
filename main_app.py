@@ -44,8 +44,7 @@ eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 
 st.header('MensaCast')
-st.subheader('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
-st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
+st.write('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
 st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
 tab1, tab2, tab3 = st.tabs(['Durchschnittspreise', 'Speiseplan', 'Komponentensuche'])
