@@ -67,7 +67,7 @@ plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 
-altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=None,axis=alt.Axis(title='',tickCount=min(52,past_weeks+1))),y=alt.Y('avg_prices:Q',axis=alt.Axis(title='',format='.2f')),color=alt.Color('flip_arange_values',legend=None,scale=alt.Scale(scheme='redyellowgreen')))
+altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=None,axis=alt.Axis(title='',tickSize=1),y=alt.Y('avg_prices:Q',axis=alt.Axis(title='',format='.2f')),color=alt.Color('flip_arange_values',legend=None,scale=alt.Scale(scheme='redyellowgreen')))
 altair_line = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.value('orange'))
 altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='lin_reg_values:Q',color=alt.value('red'))
 st.write((altair_bar+altair_line+altair_line_linreg).properties(width=plot_width,height=plot_height))
