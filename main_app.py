@@ -47,9 +47,13 @@ st.header('MensaCast')
 st.write('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
 st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
-tab1, tab2, tab3 = st.tabs(['Durchschnittspreise', 'Speiseplan', 'Komponentensuche'])
+tab1, tab2, tab3 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche'])
 
 with tab1:
+        df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
+        st.write(df_current_week)
+
+with tab2:
         fig, ax = plt.subplots()
 
         past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103, value = 11, step = 1)
@@ -75,10 +79,6 @@ with tab1:
         layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199',hovermode='x')
         fig = go.Figure(data=[avg_plot,lin_reg_plot], layout=layout)
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
-
-with tab2:
-        df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
-        st.write(df_current_week)
         
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch im Bau!')
