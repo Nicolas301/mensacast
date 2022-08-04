@@ -44,19 +44,11 @@ eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
-mobile_version = st.checkbox('Mobile Ansicht', value=False, help='Macht Grafiken kleiner, die sich nicht automatisch skalieren.')
-plot_width = 750*(1-mobile_version)+340*mobile_version
-plot_height = 500*(1-mobile_version)+400*mobile_version
-
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
 fig, ax = plt.subplots()
 
-past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-80*mobile_version, value = 11, step = 1)
-if past_weeks == 0:
-        past_weeks = 11
-if past_weeks > 23 and mobile_version:
-        past_weeks = 23
+past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103, value = 11, step = 1)
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
 
