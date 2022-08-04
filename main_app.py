@@ -44,7 +44,7 @@ df, fetch_date = fetch_data(eff_day)
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
 mobile_version = st.checkbox('Mobile Ansicht', value=False, help='Macht Grafiken kleiner, die sich nicht automatisch skalieren.')
-plot_width = 750*(1-mobile_version)+300*mobile_version
+plot_width = 750*(1-mobile_version)+350*mobile_version
 plot_height = 500*(1-mobile_version)+400*mobile_version
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
