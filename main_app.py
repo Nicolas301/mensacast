@@ -70,17 +70,9 @@ plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 
-altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=None,axis=alt.Axis(title='')),y=alt.Y('avg_prices:Q',axis=alt.Axis(title='',format='.2f')),color=alt.Color('flip_arange_values',legend=None,scale=alt.Scale(scheme='redyellowgreen')))
-altair_line = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.value('orange'))
-altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='lin_reg_values:Q',color=alt.value('red'))
-st.write((altair_bar+altair_line+altair_line_linreg).properties(width=plot_width,height=plot_height))
-
-experimental = st.checkbox('Experimentellen Plotly-Plot anzeigen')
-
-if experimental:
-        custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
-        bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], marker=dict(color=plot_data['arange_values'], colorscale = custom_scale))
-        line_1 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'])
-        line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'])
-        fig = go.Figure(data=[bar_1,line_1,line_2])
-        st.plotly_chart(fig, use_container_width=True)
+custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
+bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], marker=dict(color=plot_data['arange_values'], colorscale = custom_scale))
+line_1 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'])
+line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'])
+fig = go.Figure(data=[bar_1,line_1,line_2])
+st.plotly_chart(fig, use_container_width=True)
