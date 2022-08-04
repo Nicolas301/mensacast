@@ -67,3 +67,4 @@ altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=No
 altair_line = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.value('orange'))
 altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='lin_reg_values:Q',color=alt.value('red'))
 st.write((altair_bar+altair_line+altair_line_linreg).properties(width=750,height=500))
+st.write((altair_bar+altair_line+altair_line_linreg))
