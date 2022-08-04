@@ -64,6 +64,13 @@ with tab1:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date'])
+        hide_table_row_index = """
+            <style>
+            thead tr th:first-child {display:none}
+            tbody th {display:none}
+            </style>
+            """
+        st.markdown(hide_table_row_index, unsafe_allow_html=True)
         st.write(df_current_day)
 
 
