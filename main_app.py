@@ -74,4 +74,4 @@ line_1 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['
 line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'],line=dict(color="#FF0000"), name = 'Linearer Trend', showlegend = False)
 layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199')
 fig = go.Figure(data=[bar_1,line_1,line_2], layout=layout)
-st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
+#st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
