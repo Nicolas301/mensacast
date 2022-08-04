@@ -51,7 +51,7 @@ st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
 fig, ax = plt.subplots()
         
-past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-52*mobile_version, value = 11, step = 1)
+past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-80*mobile_version, value = 11, step = 1)
 if past_weeks == 0:
         past_weeks = 11
 if past_weeks > 51 and mobile_version:
