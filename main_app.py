@@ -78,7 +78,7 @@ st.write((altair_bar+altair_line+altair_line_linreg).properties(width=plot_width
 experimental = st.checkbox('Experimentellen Plotly-Plot anzeigen')
 
 if experimental:
-        bar_1 = go.Bar(x = plot_data['bar_label'], y = plot_data['avg_prices'])
+        bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'])
         #line_1 = 
         fig = go.Figure(data=[bar_1])
         st.write(fig)
