@@ -61,8 +61,8 @@ plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 
 custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
-bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], hoverinfo='Durchschnitt', marker=dict(color=plot_data['arange_values'], colorscale = 'RdBu'), showlegend = False)
-line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'],line=dict(color="#FF0000"), hoverinfo = 'Linearer Trend', showlegend = False)
+bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='Durchschnitt', marker=dict(color=plot_data['arange_values'], colorscale = 'RdBu'), showlegend = False)
+line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'],line=dict(color="#FF0000"), name = 'Linearer Trend', showlegend = False)
 layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199',hovermode='x')
 fig = go.Figure(data=[bar_1,line_2], layout=layout)
 st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
