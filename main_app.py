@@ -54,7 +54,7 @@ with tab1:
 
         past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103, value = 11, step = 1)
         
-        use_bars = st.checkbox('Durchschnittspreise als Balken- statt Liniendiagramm darstellen')
+        use_lines = st.checkbox('Durchschnittspreise als Linien- statt Balkendiagramm darstellen', value = False)
 
         avg_prices, bar_labels = calculate_average_week_prices(monday())
 
@@ -67,7 +67,7 @@ with tab1:
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 
         custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
-        if use_bars:
+        if not(use_bars):
                 avg_plot = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='Durchschnitt', marker=dict(color=plot_data['arange_values'], colorscale = 'RdBu'), showlegend = False)
         else:
                 avg_plot = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='Durchschnitt', line=dict(color='#0000FF'), showlegend = False)
