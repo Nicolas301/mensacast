@@ -63,7 +63,7 @@ with tab1:
         elif selected_weekday == 'Freitag':
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
-        df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date'])
+        df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename({'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
         st.write(df_current_day)
 
 
