@@ -50,7 +50,8 @@ fig, ax = plt.subplots()
 past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 11, step = 1)
 if past_weeks == 0:
         past_weeks = 11
-
+display_bars = st.checkbox('Balken anzeigen (verlangsamen das Rendern des Diagramms erheblich)', value = True)
+        
 st.write('Durchschnittspreise:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
@@ -61,7 +62,8 @@ plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'avg_prices': avg_prices[(np.size(bar_labels)-past_weeks-1):],
                           'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
-sns.barplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
+if display_bars:
+        sns.barplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
 sns.lineplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
 sns.lineplot(data=plot_data, x='arange_values', y='lin_reg_values', ax=ax, color='#FF0000')
 sns.set_theme(style='whitegrid')
