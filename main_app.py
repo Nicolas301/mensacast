@@ -54,14 +54,13 @@ with tab1:
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
         selected_weekday = st.selectbox('Wochentag', ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'],index=min(today_index,4))
         start_of_day = pd.to_datetime(monday())
-        st.write(selected_weekday)
-        if selected_weekday == 1:
+        if selected_weekday == 'Dienstag':
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
-        elif selected_weekday == 2:
+        elif selected_weekday == 'Mittwoch':
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(2,'D')
-        elif selected_weekday == 3:
+        elif selected_weekday == 'Donnerstag':
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(3,'D')
-        else:
+        elif selected_weekday == 'Freitag':
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
         st.write(start_of_day)
