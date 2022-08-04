@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
-import seaborn as sns
+import plotly.graph_objects as go
 import altair as alt
 import pandas as pd
 import matplotlib.ticker as ticker
@@ -78,7 +78,7 @@ st.write((altair_bar+altair_line+altair_line_linreg).properties(width=plot_width
 experimental = st.checkbox('Experimentellen Plotly-Plot anzeigen')
 
 if experimental:
-        fig = px.line(plot_data, x = 'bar_labels', y = 'avg_prices')
-        fig.add_bar(x = 'bar_labels', y = 'avg_prices')
-        #fig.add_line(x = 'bar_labels', y = 'lin_reg_values')
+        bar_1 = go.Bar(x = plot_data['bar_label'], y = plot_data['avg_prices'])
+        #line_1 = 
+        fig = go.Figure(data=[bar_1])
         st.write(fig)
