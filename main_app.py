@@ -69,7 +69,7 @@ plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 
 custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
-bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], name=None, marker=dict(color=plot_data['arange_values'], colorscale = custom_scale), showlegend = False)
+bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='', marker=dict(color=plot_data['arange_values'], colorscale = custom_scale), showlegend = False)
 line_1 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'],line=dict(color="#FF8800"))
 line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'],line=dict(color="#FF0000"))
 layout = go.Layout(title="Durchschnittspreise in Euro",title_font_color='#001199')
