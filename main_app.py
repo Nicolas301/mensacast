@@ -78,6 +78,7 @@ with tab1:
 
 with tab2:
         df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())]
+        st.write(df_current_week)
         
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch im Bau!')
