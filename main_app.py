@@ -84,4 +84,4 @@ if experimental:
         line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'])
         fig = go.Figure(data=[bar_1,line_1,line_2])
         fig.update_layout(width=900, height=600)
-        st.write(fig)
+        st.plotly_chart(fig, use_container_width=True)
