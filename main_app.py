@@ -78,7 +78,7 @@ st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False)
 
 experimental = st.checkbox('Experimentellen Plot anzeigen.')
 if experimental:
-        fig2 = px.area(plot_data, x="bar_labels", y="avg_prices")
+        fig2 = px.area(plot_data, x="bar_labels", y="avg_prices", color = "arange_values")
         st.plotly_chart(fig2, use_container_width=True, config=dict(displayModeBar=False))
 
 
