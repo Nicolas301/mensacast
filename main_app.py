@@ -78,7 +78,7 @@ st.write((altair_bar+altair_line+altair_line_linreg).properties(width=plot_width
 experimental = st.checkbox('Experimentellen Plotly-Plot anzeigen')
 
 if experimental:
-        custom_scale = [[0, '#008800'],[.5, '#FFFFAA'],[1, '#880000']]
+        custom_scale = [[0, '#00AA00'],[.5, '#FFFFAA'],[1, '#AA0000']]
         bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], marker=dict(color=plot_data['arange_values'], colorscale = custom_scale))
         line_1 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'])
         line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'])
