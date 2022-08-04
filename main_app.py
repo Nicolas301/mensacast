@@ -77,7 +77,7 @@ with tab1:
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
 
 with tab2:
-        df_current_week = df[pd.to_timestamp(df['date']) >= monday()]
+        df_current_week = df[pd.Timestamp(df['date']) >= monday()]
         
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch im Bau!')
