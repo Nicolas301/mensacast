@@ -76,4 +76,6 @@ ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
 st.pyplot(fig)
 altair_test_plot = st.checkbox('Experimentellen Altair-Plot anzeigen', help='Diese Funktion befindet sich in Entwicklung und wird die obige Grafik demnächst ersetzen.')
 if altair_test_plot:
-        st.write(alt.Chart(plot_data).mark_bar().encode(x='bar_labels',y='avg_prices'))
+        altair_bar = alt.Chart(plot_data).mark_bar().encode(x='bar_labels',y='avg_prices')
+        altair_line = alt.Chart(plot_data).mark_line().encode(x='bar_labels',y='avg_prices')
+        st.write(altair_bar+altair_line)
