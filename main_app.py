@@ -50,12 +50,16 @@ plot_height = 500*(1-mobile_version)+400*mobile_version
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
 fig, ax = plt.subplots()
-        
-past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-80*mobile_version, value = 11, step = 1)
+
+default_avg_slider_value = 11
+if 'default_avg_slider_value' in st.session_state:
+        default_avg_slider_value = st.session_state['default_avg_slider_value']
+past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-80*mobile_version, value = default_avg_slider_value, step = 1)
 if past_weeks == 0:
         past_weeks = 11
 if past_weeks > 23 and mobile_version:
         past_weeks = 23
+st.session_state['default_avg_slider_value'] = default_avg_slider_value
         
 st.write('Durchschnittspreise in Euro:')
 
