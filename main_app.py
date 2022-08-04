@@ -82,4 +82,4 @@ with tab2:
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
         
 with tab3:
-        st.write('Dieser Teil der Seite befindet sich noch im Bau!')
+        st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
