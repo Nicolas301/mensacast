@@ -53,6 +53,8 @@ with tab1:
         df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         st.write(df_current_week)
+        
+        tab_mon, tab_tue, tab_wed, tab_thu, tab_fri = st.tabs(['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'])
 
 with tab2:
         fig, ax = plt.subplots()
