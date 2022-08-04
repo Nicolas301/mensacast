@@ -57,8 +57,6 @@ if past_weeks == 0:
         past_weeks = 11
 if past_weeks > 23 and mobile_version:
         past_weeks = 23
-        
-st.write('Durchschnittspreise in Euro:')
 
 avg_prices, bar_labels = calculate_average_week_prices(monday())
 
@@ -74,5 +72,6 @@ custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
 bar_1 = go.Bar(x = plot_data['bar_labels'], y = plot_data['avg_prices'], marker=dict(color=plot_data['arange_values'], colorscale = custom_scale))
 line_1 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'])
 line_2 = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'])
-fig = go.Figure(data=[bar_1,line_1,line_2])
+layout = go.Layout(title="Durchschnittspreise in Euro")
+fig = go.Figure(data=[bar_1,line_1,line_2], layout=layout)
 st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
