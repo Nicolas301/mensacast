@@ -79,4 +79,6 @@ experimental = st.checkbox('Experimentellen Plotly-Plot anzeigen')
 
 if experimental:
         fig = px.bar(plot_data, x = 'bar_labels', y = 'avg_prices')
+        fig.add_line(x = 'bar_labels', y = 'avg_prices')
+        fig.add_line(x = 'bar_labels', y = 'lin_reg_values')
         st.write(fig)
