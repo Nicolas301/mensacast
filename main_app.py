@@ -61,8 +61,7 @@ regression = LinearRegression().fit(np.arange(past_weeks+1).reshape(-1,1), avg_p
 plot_data = pd.DataFrame({'arange_values': np.arange(past_weeks+1),
                           'avg_prices': avg_prices[(np.size(bar_labels)-past_weeks-1):],
                           'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
-                          'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1)),
-                          'color_gradient': get_color_gradient('#FF0000','#00FFFF',past_weeks+1)})
+                          'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
 if display_bars:
         sns.barplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
 sns.lineplot(data=plot_data, x='bar_labels', y='avg_prices', ax=ax)
