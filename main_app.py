@@ -47,7 +47,7 @@ st.header('MensaCast')
 st.write('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
 st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
-tab1, tab2, tab3 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche'])
+tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken'])
 
 with tab1:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
@@ -98,3 +98,7 @@ with tab2:
         
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
+
+with tab4:
+        st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
+
