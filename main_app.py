@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.express as px
 import seaborn as sns
 import altair as alt
 import pandas as pd
@@ -73,3 +74,9 @@ altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=No
 altair_line = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.value('orange'))
 altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='lin_reg_values:Q',color=alt.value('red'))
 st.write((altair_bar+altair_line+altair_line_linreg).properties(width=plot_width,height=plot_height))
+
+experimental = st.checkbox('Experimentellen Plotly-Plot anzeigen')
+
+if experimental:
+        fig = px.bar(plot_data, x = 'bar_labels', y = 'avg_prices')
+        fig.show()
