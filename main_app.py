@@ -54,6 +54,8 @@ fig, ax = plt.subplots()
 past_weeks = 0
 if 'default_avg_slider_value' in st.session_state:
         default_avg_slider_value = st.session_state['default_avg_slider_value']
+        if default_avg_slider_value > 23 and mobile_version:
+                default_avg_slider_value = 23
         past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-80*mobile_version, value = default_avg_slider_value, step = 1)
 else:
         past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103-80*mobile_version, value = 11, step = 1)
