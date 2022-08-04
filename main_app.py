@@ -71,4 +71,8 @@ with tab1:
         fig = go.Figure(data=[bar_1,line_2], layout=layout)
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
 
-
+with tab2:
+        st.write('Dieser Teil der Seite befindet sich noch im Bau!')
+        
+with tab3:
+        st.write('Dieser Teil der Seite befindet sich noch im Bau!')
