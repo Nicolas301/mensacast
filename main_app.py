@@ -50,7 +50,6 @@ fig, ax = plt.subplots()
 past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 11, step = 1)
 if past_weeks == 0:
         past_weeks = 11
-display_bars = st.checkbox('Balken anzeigen (verlangsamen das Rendern des Diagramms erheblich)', value = True)
         
 st.write('Durchschnittspreise:')
 
