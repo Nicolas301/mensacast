@@ -52,11 +52,19 @@ tab1, tab2, tab3 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuc
 with tab1:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         tab_mon, tab_tue, tab_wed, tab_thu, tab_fri = st.tabs(['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'])
-        start_of_day = pd.to_datetime(monday())
-        #with tab_mon:
-               #df_current_day = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
+        with tab_mon:
+               start_of_day = pd.to_datetime(monday())
+        with tab_tue:
+                start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
+        with tab_wed:
+                start_of_day = pd.to_datetime(monday()) + np.timedelta64(2,'D')
+        with tab_thu:
+                start_of_day = pd.to_datetime(monday()) + np.timedelta64(3,'D')
+        with tab_fri:
+                start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
-        st.write(df_current_week)
+        df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id'])
+        st.write(df_current_day)
 
 
 with tab2:
