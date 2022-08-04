@@ -77,7 +77,7 @@ with tab1:
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
 
 with tab2:
-        df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())]
+        df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
         st.write(df_current_week)
         
 with tab3:
