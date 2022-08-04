@@ -9,22 +9,6 @@ from sklearn.linear_model import LinearRegression
 from fetcher import *
 import time
 
-def hex_to_RGB(hex_str):
-    """ #FFFFFF -> [255,255,255]"""
-    return [int(hex_str[i:i+2], 16) for i in range(1,6,2)]
-
-def get_color_gradient(c1, c2, n):
-    """
-    Given two hex colors, returns a color gradient
-    with n colors.
-    """
-    assert n > 1
-    c1_rgb = np.array(hex_to_RGB(c1))/255
-    c2_rgb = np.array(hex_to_RGB(c2))/255
-    mix_pcts = [x/(n-1) for x in range(n)]
-    rgb_colors = [((1-mix)*c1_rgb + (mix*c2_rgb)) for mix in mix_pcts]
-    return ["#" + "".join([format(int(round(val*255)), "02x") for val in item]) for item in rgb_colors]
-
 def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
@@ -93,7 +77,7 @@ ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
 st.pyplot(fig)
 altair_test_plot = st.checkbox('Experimentellen Altair-Plot anzeigen', help='Diese Funktion befindet sich in Entwicklung und wird die obige Grafik demnächst ersetzen.')
 if altair_test_plot:
-        altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.Color('color_gradient',legend=None,scale=alt.Scale(scheme='redyellowgreen')))
+        altair_bar = alt.Chart(plot_data).mark_bar().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.Color('arange_values',legend=None,scale=alt.Scale(scheme='redyellowgreen')))
         altair_line = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='avg_prices:Q',color=alt.value('orange'))
         altair_line_linreg = alt.Chart(plot_data).mark_line().encode(x=alt.X('bar_labels',sort=None),y='lin_reg_values:Q',color=alt.value('red'))
         st.write((altair_bar+altair_line+altair_line_linreg).properties(width=900,height=600))
