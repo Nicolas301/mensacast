@@ -22,7 +22,7 @@ def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
         bar_labels = []
-        missing_values = 52
+        missing_values = 104
         while missing_values > 0:
                 iter_distance = missing_values
                 missing_values = 0
@@ -51,7 +51,7 @@ st.write('Hier entsteht das DataMining-Projekt MensaCast.')
 
 fig, ax = plt.subplots()
         
-past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 51, value = 11, step = 1)
+past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103, value = 11, step = 1)
 if past_weeks == 0:
         past_weeks = 11
         
