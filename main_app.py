@@ -53,9 +53,8 @@ with tab1:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
         selected_weekday = st.selectbox('Wochentag', ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'],index=min(today_index,4))
-        if selected_weekday == 0:
-               start_of_day = pd.to_datetime(monday())
-        elif selected_weekday == 1:
+        start_of_day = pd.to_datetime(monday())
+        if selected_weekday == 1:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
         elif selected_weekday == 2:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(2,'D')
@@ -64,7 +63,7 @@ with tab1:
         else:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
-        st.write(start_of_day+np.timedelta64(55,'D'))
+        st.write(start_of_day)
         st.write(end_of_day)
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id'])
         st.write(df_current_day)
