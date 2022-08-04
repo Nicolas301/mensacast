@@ -7,7 +7,6 @@ import matplotlib.ticker as ticker
 from sklearn.linear_model import LinearRegression
 from fetcher import *
 import time
-import os
 
 def monday():
         return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
@@ -74,3 +73,5 @@ ax.set_xlabel('')
 ax.set_ylabel('')
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter(f'%.2f €'))
 st.pyplot(fig)
+
+altair_test_plot = st.checkbox('Altair-Graph anzeigen (ist in Entwicklung und ersetzt den obigen Graph demnächst)')
