@@ -51,17 +51,17 @@ tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponen
 
 with tab1:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
-        today_index = (pd.Timestamp.today(tz='Europe/Berlin')+pd.Timedelta(days=3)).weekday()
+        today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
         selected_weekday = st.selectbox('Wochentag', ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'],index=min(today_index,4))
-        with tab_mon:
+        if selected_weekday == 0:
                start_of_day = pd.to_datetime(monday())
-        with tab_tue:
+        elif selected_weekday == 1:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
-        with tab_wed:
+        elif selected_weekday == 2:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(2,'D')
-        with tab_thu:
+        elif selected_weekday == 3:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(3,'D')
-        with tab_fri:
+        else:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
         st.write(start_of_day)
