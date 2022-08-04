@@ -51,6 +51,7 @@ tab1, tab2, tab3 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuc
 
 with tab1:
         df_current_week = df[pd.to_datetime(df['date']) >= pd.to_datetime(monday())].drop(columns=['id'])
+        st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         st.write(df_current_week)
 
 with tab2:
