@@ -39,13 +39,12 @@ def calculate_average_week_prices(beginning_of_week):
         bar_labels.reverse()
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
-alt.renderers.set_embed_options(actions=False)
 eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
 mobile_version = st.checkbox('Mobile Ansicht', value=False, help='Macht Grafiken kleiner, die sich nicht automatisch skalieren.')
-plot_width = 700*(1-mobile_version)+340*mobile_version
+plot_width = 750*(1-mobile_version)+340*mobile_version
 plot_height = 500*(1-mobile_version)+400*mobile_version
 
 st.write('Hier entsteht das DataMining-Projekt MensaCast.')
