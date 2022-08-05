@@ -18,8 +18,11 @@ def highlight_vegetarian(df, vegetarian_column):
         return ['background-color: #004400' if vegetarian_column.iloc[x] else 'background-color: #440000' for x in np.arange(df.shape[0])]
 
 # Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
-def slice_time(from_including, to_excluding, data):
-        return data.loc[[(pd.to_datetime(date) >= pd.to_datetime(from_including)) & (pd.to_datetime(date) < pd.to_datetime(to_excluding)) for date in data['date']]]
+def slice_time(data, from_including, to_excluding=None):
+        if to_excluding not is None:
+                return data.loc[[(pd.to_datetime(date) >= pd.to_datetime(from_including)) & (pd.to_datetime(date) < pd.to_datetime(to_excluding)) for date in data['date']]]
+        else:
+                return data.loc[[pd.to_datetime(date) >= pd.to_datetime(from_including) for date in data['date']]]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
@@ -131,7 +134,7 @@ with tab3:
         selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
         
         # Preprocessing
-        sliced_df = slice_time(monday()-pd.DateOffset(months=12),monday()+pd.DateOffset(days=1),df)
+        sliced_df = slice_time(df,effective_day()-pd.DateOffset(months=12))
         sel_df = sliced_df.copy()
         sel_df['meal'] = sel_df['meal'].str.lower()
         st.write(f'Zahl der gespeicherten Essen seit {(effective_day()-pd.DateOffset(months=12)).strftime("%d.%m.%Y")}: {sliced_df.shape[0]}')
