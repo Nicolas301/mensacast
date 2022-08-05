@@ -19,7 +19,6 @@ def highlight_vegetarian(df, vegetarian_column):
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
-        print('Ping')
         iterated_week = pd.Timestamp(beginning_of_week)
         avg_prices = []
         bar_labels = []
@@ -95,7 +94,7 @@ with tab2:
                                   'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
         
-        st.metric('Preistrend',value='',delta=f'{round(100*regression.coef_[0],1)} %'.replace('.',','), delta_color='inverse')
+        st.metric('Preistrend',value='',delta=f'{round(100*regression.coef_[0],1)} %'.replace('.',','), delta_color='inverse',help='... im Diagrammzeitraum')
 
         custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
         if not(use_lines):
