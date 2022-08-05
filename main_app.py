@@ -19,7 +19,6 @@ def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
 def highlight_vegetarian(df):
-        highlight_df = df.loc['Vegetarisch'] >= threshold
         return ['background-color: green' if df.loc['Vegetarisch'] else '' for x in df]
 
 @st.cache(allow_output_mutation=True)
