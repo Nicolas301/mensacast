@@ -55,16 +55,22 @@ tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponen
 
 with tab1:
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
-        selected_weekday = st.selectbox('Wochentag', ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'],index=min(today_index,4))
+        weekday_labels = []
+        weekday_labels.append(f'Montag, {(pd.to_datetime(monday())).strftime("%d. %B %Y")}')
+        weekday_labels.append(f'Dienstag, {(pd.to_datetime(monday()) + np.timedelta64(1,'D')).strftime("%d. %B %Y")}')
+        weekday_labels.append(f'Montag, {(pd.to_datetime(monday()) + np.timedelta64(2,'D')).strftime("%d. %B %Y")}')
+        weekday_labels.append(f'Montag, {(pd.to_datetime(monday()) + np.timedelta64(3,'D')).strftime("%d. %B %Y")}')
+        weekday_labels.append(f'Montag, {(pd.to_datetime(monday()) + np.timedelta64(4,'D')).strftime("%d. %B %Y")}')
+        selected_weekday = st.selectbox('Wochentag', weekday_labels,index=min(today_index,4))
         highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False)
         start_of_day = pd.to_datetime(monday())
-        if selected_weekday == 'Dienstag':
+        if selected_weekday == weekday_labels[1]:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
-        elif selected_weekday == 'Mittwoch':
+        elif selected_weekday == weekday_labels[2]:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(2,'D')
-        elif selected_weekday == 'Donnerstag':
+        elif selected_weekday == weekday_labels[3]:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(3,'D')
-        elif selected_weekday == 'Freitag':
+        elif selected_weekday == weekday_labels[4]:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(4,'D')
         end_of_day = start_of_day + np.timedelta64(1,'D')
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename(columns={'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
