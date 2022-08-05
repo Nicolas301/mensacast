@@ -149,7 +149,7 @@ with tab3:
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         
-        vegetarian_df = df.loc[bool(df['is_vegetarian'])]
+        vegetarian_df = df.loc[[bool(x) for x in df['is_vegetarian']]]
         veg_share = vegetarian_df.shape[0]/df.shape[0]
         st.metric('Anteil vegetarischer Gerichte',f'{round(100*veg_share,2)} %')
 
