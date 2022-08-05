@@ -19,7 +19,7 @@ def highlight_vegetarian(df, vegetarian_column):
 
 # Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
 def slice_time(data, from_including, to_excluding=None):
-        if to_excluding not is None:
+        if to_excluding is not None:
                 return data.loc[[(pd.to_datetime(date) >= pd.to_datetime(from_including)) & (pd.to_datetime(date) < pd.to_datetime(to_excluding)) for date in data['date']]]
         else:
                 return data.loc[[pd.to_datetime(date) >= pd.to_datetime(from_including) for date in data['date']]]
