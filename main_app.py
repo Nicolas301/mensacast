@@ -143,7 +143,7 @@ with tab3:
         sel_df = df.iloc[sel_df.index]
         st.write(f'Zahl der gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
         st.table(sel_df.tail(5))
-        st.write(str(sel_df.dtypes))
+        st.write(sel_df['date'].dtype)
 
 
 
