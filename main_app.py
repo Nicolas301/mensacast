@@ -65,20 +65,8 @@ with tab1:
         end_of_day = start_of_day + np.timedelta64(1,'D')
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename(columns={'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
         st.write(df_current_day)
-        st.markdown("""<table>
-        <thead>
-        <tr>
-        <th>foo</th>
-        <th>bar</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-        <td>baz</td>
-        <td>bim</td>
-        </tr>
-        </tbody>
-        </table>""")
+        for row in df_current_day:
+                st.write(row)
 
 
 with tab2:
