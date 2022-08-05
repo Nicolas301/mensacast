@@ -11,11 +11,11 @@ from fetcher import *
 import time
 
 def monday():
-        return (pd.Timestamp.today() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
+        return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
 # Dummytag, um tägliches Neuauslesen zu erzwingen
 def effective_day():
-        return (pd.Timestamp.today() - pd.DateOffset(hours=6, minutes=30)).date()
+        return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
