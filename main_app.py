@@ -57,7 +57,7 @@ with tab1:
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
         weekday_labels = []
         weekday_labels.append(f'Montag, {(pd.to_datetime(monday())).strftime("%d. %B %Y")}')
-        weekday_labels.append(f'Dienstag, {(pd.to_datetime(monday()) + np.timedelta64(1,'D')).strftime("%d. %B %Y")}')
+        #weekday_labels.append(f'Dienstag, {(pd.to_datetime(monday()) + np.timedelta64(1,'D')).strftime("%d. %B %Y")}')
         weekday_labels.append(f'Montag, {(pd.to_datetime(monday()) + np.timedelta64(2,'D')).strftime("%d. %B %Y")}')
         weekday_labels.append(f'Montag, {(pd.to_datetime(monday()) + np.timedelta64(3,'D')).strftime("%d. %B %Y")}')
         weekday_labels.append(f'Montag, {(pd.to_datetime(monday()) + np.timedelta64(4,'D')).strftime("%d. %B %Y")}')
