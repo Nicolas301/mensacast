@@ -15,7 +15,7 @@ def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
 def highlight_vegetarian(df, vegetarian_column):
-        return ['background-color: #440044' if vegetarian_column.iloc[x] else 'background-color: #004444' for x in np.arange(df.shape[0])]
+        return ['background-color: #004400' if vegetarian_column.iloc[x] else 'background-color: #440000' for x in np.arange(df.shape[0])]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
