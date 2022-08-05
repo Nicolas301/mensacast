@@ -18,7 +18,7 @@ def monday():
 def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
-def highlight_vegetarian(df, veg_column):
+def highlight_vegetarian(df, vegetarian_column):
         return ['background-color: #AAFFAA' if veg_column else 'background-color: #FFAAAA' for x in df]
 
 @st.cache(allow_output_mutation=True)
