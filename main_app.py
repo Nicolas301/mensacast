@@ -129,7 +129,6 @@ with tab3:
         # Preprocessing
         sel_df = df
         sel_df['meal'] = sel_df['meal'].str.lower()
-        st.write(sel_df.tail())
         st.write(f'Zahl der gespeicherten Essen: {df.shape[0]}')
         for sel_comp in selected_components:
                 val = component_dict[sel_comp]
@@ -138,8 +137,10 @@ with tab3:
                 elif type(val) is list:
                         sublist = val[1:]
                         val = val[0]
-                        #for replace_string in 
-
+                        for replace_string in sublist:
+                                sel_df['meal'] = sel_df['meal'].str.replace(replace_string.lower(), val.lower())
+                sel_df = sel_df[val in sel_df['meal']]
+        st.write(f'Zahl der gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
 
 
 
