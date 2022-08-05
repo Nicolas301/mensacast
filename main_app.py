@@ -18,8 +18,8 @@ def monday():
 def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
-def highlight_vegetarian(df):
-        return ['background-color: #AAFFAA' if df.loc['Vegetarisch'] else 'background-color: #FFAAAA' for x in df]
+def highlight_vegetarian(df, veg_column):
+        return ['background-color: #AAFFAA' if veg_column else 'background-color: #FFAAAA' for x in df]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
@@ -70,7 +70,8 @@ with tab1:
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename(columns={'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
         df_current_day.set_index(np.arange(1,df_current_day.shape[0]+1),inplace=True)
         df_current_day.sort_values(by='Preis', inplace = True)
-        df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',').apply(highlight_vegetarian, axis = 1)
+        vegetarian_column = df['Vegetarisch']
+        df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',').apply(highlight_vegetarian, vegetarian_column = vegetarian_column, axis = 1)
         df_current_day.drop(columns=['Vegetarisch'], inplace=True)
         st.table(df_style)
 
