@@ -128,7 +128,7 @@ with tab3:
         
         # Preprocessing
         sel_df = df
-        sel_df['meal'] = sel_df.str.lower()
+        sel_df['meal'] = sel_df['meal'].str.lower()
         st.write(sel_df.tail())
         st.write(f'Zahl der gespeicherten Essen: {df.shape[0]}')
         for sel_comp in selected_components:
