@@ -119,7 +119,7 @@ with tab3:
         
         selected_component = st.multiselect('Komponenten', list(component_dict.keys()))
         for x in selected_component:
-                st.write(typeof(x))
+                st.write(type(x))
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
