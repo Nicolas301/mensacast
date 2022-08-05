@@ -139,7 +139,7 @@ with tab3:
                         val = val[0]
                         for replace_string in sublist:
                                 sel_df['meal'] = sel_df['meal'].str.replace(replace_string.lower(), val.lower())
-                sel_df = sel_df[[val in x for x in sel_df['meal']]]
+                sel_df = sel_df[[val.lower() in x for x in sel_df['meal']]]
         st.write(f'Zahl der gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
 
 
