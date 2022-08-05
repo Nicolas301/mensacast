@@ -131,10 +131,10 @@ with tab3:
         selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
         
         # Preprocessing
-        sliced_df = slice_time(,,df)
+        sliced_df = slice_time(monday()-pd.DateOffset(months=12),monday()-pd.DateOffset(months=3),df)
         sel_df = sliced_df.copy()
         sel_df['meal'] = sel_df['meal'].str.lower()
-        st.write(f'Zahl der gespeicherten Essen seit {(monday()-pd.DateOffset(years=1)).strftime("%d.%m.%Y")}: {df.shape[0]}')
+        st.write(f'Zahl der gespeicherten Essen seit {(monday()-pd.DateOffset(months=12)).strftime("%d.%m.%Y")}: {df.shape[0]}')
         for sel_comp in selected_components:
                 val = component_dict[sel_comp]
                 if type(val) is int:
