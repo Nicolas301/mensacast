@@ -12,11 +12,11 @@ import time
 
 # Gibt den Montag der aktuellen Woche zurück
 def monday():
-        return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(days=pd.Timestamp.today().weekday()-14)).date()
+        return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
 # Dummytag, um tägliches Neuauslesen zu erzwingen
 def effective_day():
-        return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
+        return (effective_day() - pd.DateOffset(hours=6, minutes=30)).date()
 
 def highlight_vegetarian(df, vegetarian_column):
         return ['background-color: #AAFFAA' if vegetarian_column.iloc[x] else 'background-color: #FFAAAA' for x in np.arange(df.shape[0])]
