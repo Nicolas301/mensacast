@@ -12,7 +12,7 @@ import time
 
 # Gibt den Montag der aktuellen Woche zurück
 def monday():
-        return (effective_day() - pd.DateOffset(days=pd.Timestamp.today().weekday()-7)).date()
+        return (effective_day() - pd.DateOffset(days=pd.Timestamp.today().weekday()+7)).date()
 
 # Dummytag, um tägliches Neuauslesen zu erzwingen
 def effective_day():
