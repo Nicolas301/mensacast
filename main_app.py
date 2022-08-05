@@ -111,10 +111,10 @@ with tab2:
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         
-        component_dictionary = {'Pommes': 'Pommes', 'Reis': 'Reis', 'Soja': 'Soja', 'Tofu': 'Tofu',
+        component_dict = {'Pommes': 'Pommes', 'Reis': 'Reis', 'Soja': 'Soja', 'Tofu': 'Tofu',
                                 'Ananas': 'Ananas', 'Schnitzel': 'Schnitzel', 'Nudeln': 'Nudel'}
         
-        selected_component = st.multiselect('Komponente', list(component_list.keys()))
+        selected_component = st.multiselect('Komponente', list(component_dict.keys()))
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
