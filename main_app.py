@@ -111,10 +111,15 @@ with tab2:
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         
+        # Schlüssel wird angezeigt, Wert wird intern verwendet
         component_dict = {'Pommes': 'Pommes', 'Reis': 'Reis', 'Soja': 'Soja', 'Tofu': 'Tofu',
-                                'Ananas': 'Ananas', 'Schnitzel': 'Schnitzel', 'Nudeln': 'Nudel'}
+                        'Ananas': 'Ananas', 'Schnitzel': 'Schnitzel', 'Nudeln': ['Nudel','Spirelli'],
+                        'Suppe': 'Suppe', 'Kartoffeln': 'Kartoffel', 'Käse': 'Käse',
+                        'Auflauf': 'Auflauf'}
         
         selected_component = st.multiselect('Komponenten', list(component_dict.keys()))
+        for x in selected_component:
+                st.write(component_dict[x][0])
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
