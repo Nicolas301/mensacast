@@ -8,12 +8,10 @@ import pandas as pd
 import matplotlib.ticker as ticker
 from sklearn.linear_model import LinearRegression
 from fetcher import *
-import time
-import locale
 
 # Gibt den Montag der aktuellen Woche zurück
 def monday():
-        return (effective_day() - pd.DateOffset(days=pd.Timestamp.today().weekday()+7)).date()
+        return (effective_day() - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
 # Dummytag, um tägliches Neuauslesen zu erzwingen
 def effective_day():
@@ -45,8 +43,6 @@ def calculate_average_week_prices(beginning_of_week):
         bar_labels.reverse()
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
-locale.setlocale(locale.LC_TIME, "de_DE")
-
 eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 
@@ -59,11 +55,11 @@ tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponen
 with tab1:
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
         weekday_labels = []
-        weekday_labels.append(f'Montag, {(pd.to_datetime(monday())).strftime("%d. %B %Y")}')
-        weekday_labels.append(f'Dienstag, {(pd.to_datetime(monday()) + np.timedelta64(1,"D")).strftime("%d. %B %Y")}')
-        weekday_labels.append(f'Mittwoch, {(pd.to_datetime(monday()) + np.timedelta64(2,"D")).strftime("%d. %B %Y")}')
-        weekday_labels.append(f'Donnerstag, {(pd.to_datetime(monday()) + np.timedelta64(3,"D")).strftime("%d. %B %Y")}')
-        weekday_labels.append(f'Freitag, {(pd.to_datetime(monday()) + np.timedelta64(4,"D")).strftime("%d. %B %Y")}')
+        weekday_labels.append(f'Montag, {(pd.to_datetime(monday())).strftime("%d.%m.%Y")}')
+        weekday_labels.append(f'Dienstag, {(pd.to_datetime(monday()) + np.timedelta64(1,"D")).strftime("%d.%m.%Y")}')
+        weekday_labels.append(f'Mittwoch, {(pd.to_datetime(monday()) + np.timedelta64(2,"D")).strftime("%d.%m.%Y")}')
+        weekday_labels.append(f'Donnerstag, {(pd.to_datetime(monday()) + np.timedelta64(3,"D")).strftime("%d.%m.%Y")}')
+        weekday_labels.append(f'Freitag, {(pd.to_datetime(monday()) + np.timedelta64(4,"D")).strftime("%d.%m.%Y")}')
         selected_weekday = st.selectbox('Wochentag', weekday_labels,index=min(today_index,4))
         highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False)
         start_of_day = pd.to_datetime(monday())
