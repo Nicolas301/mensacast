@@ -138,7 +138,7 @@ with tab3:
                           'Huhn': ['Hähnchen', 'Huhn', 'Hühner'], 'Rind': 0, 'Curry': 0, 'Gulasch': 0, 'Sauerkraut': 0,
                           'Gyros': 0, 'Rostbrätel': 0, 'Bratwurst': 0, 'Tomaten': 'Tomate', 'Minestrone': 0,
                           'Rotkohl': 0, 'Frikadelle': 0, 'Kartoffelpuffer': 'Puffer', 'Mozzarellasticks': 0,
-                          'Shake': 0, 'Bowl': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
+                          'Shake': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
         
         selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
         
@@ -160,7 +160,7 @@ with tab3:
         sel_df = df.iloc[sel_df.index]
         sel_df_past = slice_time(sel_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
         sel_df_present = slice_time(sel_df, effective_day()-pd.DateOffset(months=3))
-        st.metric('Häufigkeit in den letzten drei Monaten', sel_df_present.shape[0])
+        st.metric('Häufigkeit in den letzten drei Monaten', sel_df_present.shape[0], delta=f'{(sel_df_present/number_present_days)/(sel_df_past/number_past_days)-1} %')
         st.write(f'Zahl der in der älteren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_past.shape[0]}/{number_past_days}')
         st.write(f'Zahl der in der jüngeren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_present.shape[0]}/{number_present_days}')
 
