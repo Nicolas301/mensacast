@@ -151,6 +151,6 @@ with tab4:
         
         vegetarian_df = df.loc[[bool(x) for x in df['is_vegetarian']]]
         veg_share = vegetarian_df.shape[0]/df.shape[0]
-        st.metric('Anteil vegetarischer Gerichte',f'{round(100*veg_share,2)} %'.replace('.',',')
+        st.metric('Anteil vegetarischer Gerichte',f'{round(100*veg_share,2)} %').replace('.',',')
 
 
