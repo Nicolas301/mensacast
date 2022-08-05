@@ -9,6 +9,7 @@ import matplotlib.ticker as ticker
 from sklearn.linear_model import LinearRegression
 from fetcher import *
 import time
+import locale
 
 # Gibt den Montag der aktuellen Woche zurück
 def monday():
