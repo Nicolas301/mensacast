@@ -147,7 +147,8 @@ with tab3:
         sel_df = df.iloc[sel_df.index]
         st.write(f'Zahl der gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
         st.table(sel_df.tail(5))
-
+        sel_df = slice_time('2022-07-01','2022-08-05',sel_df)
+        st.write(sel_df)
 
 
 with tab4:
