@@ -95,7 +95,7 @@ with tab2:
                                   'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
         
-        st.metric('Preistrend',value='',delta=f'{round(100*regression.coef_[0],1)} %')
+        st.metric('Preistrend',value='',delta=f'{round(100*regression.coef_[0],1)} %', delta_color='inverse')
 
         custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
         if not(use_lines):
