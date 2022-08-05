@@ -78,7 +78,7 @@ with tab1:
         <td>bim</td>
         </tr>
         </tbody>
-        </table>"""
+        </table>""")
 
 
 with tab2:
