@@ -112,10 +112,17 @@ with tab3:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         
         # Schlüssel wird angezeigt, Wert wird intern verwendet
-        component_dict = {'Pommes': 'Pommes', 'Reis': 'Reis', 'Soja': 'Soja', 'Tofu': 'Tofu',
-                        'Ananas': 'Ananas', 'Schnitzel': 'Schnitzel', 'Nudeln': ['Nudel','Spirelli'],
-                        'Suppe': 'Suppe', 'Kartoffeln': 'Kartoffel', 'Käse': 'Käse',
-                        'Auflauf': 'Auflauf'}
+        # 0: verwende Schlüssel als Wert
+        # einzelner Wert: ersetze Schlüssel durch Wert
+        # Liste von Werten: Werte sind gleichbedeutend
+        component_dict = {'Pommes': ['Pommes', 'Twister'], 'Reis': 0, 'Soja': 0, 'Tofu': 0, 'Ananas': 0, 'Schnitzel': 0, 'Nudeln': ['Nudel','Spirelli','Spaghetti'],
+                          'Suppe': 0, 'Kartoffeln': 'Kartoffel', 'Käse': 0, 'Auflauf': 0, 'Brötchen': 0, 'Schwein': 0, 'Steak': 0,
+                          'Erbsen': 'Erbse', 'Couscous': 0, 'Chili': 0, 'Tzatziki': 0, 'Lachs': 0, 'Pute': 0, 'Salat': 0,
+                          'Blumenkohl': 0, 'Linsen': 'Linse', 'Soße': 0, 'Wokgerichte': 'Wok', 'Pilze': ['Pilz','Champignon'],
+                          'Hähnchen': ['Hähnchen', 'Huhn', 'Hühner'], 'Rind': 0, 'Curry': 0, 'Gulasch': 0, 'Sauerkraut': 0,
+                          'Gyros': 0, 'Rostbrätel': 0, 'Bratwurst': 0, 'Tomaten': 'Tomate', 'Minestrone': 0,
+                          'Rotkohl': 0, 'Frikadelle': 0, 'Kartoffelpuffer': 'Puffer', 'Mozzarellasticks': 0,
+                          'Shake': 0, 'Bowl': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
         
         selected_component = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
 
