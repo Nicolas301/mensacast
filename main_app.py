@@ -94,6 +94,8 @@ with tab2:
                                   'avg_prices': avg_prices[(np.size(bar_labels)-past_weeks-1):],
                                   'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
+        
+        st.metric('Preistrend',value='',delta=regression.coef_[0])
 
         custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
         if not(use_lines):
@@ -104,7 +106,6 @@ with tab2:
         layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199',hovermode='x')
         fig = go.Figure(data=[avg_plot,lin_reg_plot], layout=layout)
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
-        st.metric('Preistrend',value='',delta=regression.coef_[0])
         
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
