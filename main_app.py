@@ -44,6 +44,8 @@ def calculate_average_week_prices(beginning_of_week):
         bar_labels.reverse()
         return np.asarray(avg_prices), np.asarray(bar_labels)
 
+locale.setlocale(locale.LC_TIME, "de_DE")
+
 eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 
