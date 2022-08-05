@@ -124,7 +124,24 @@ with tab3:
                           'Rotkohl': 0, 'Frikadelle': 0, 'Kartoffelpuffer': 'Puffer', 'Mozzarellasticks': 0,
                           'Shake': 0, 'Bowl': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
         
-        selected_component = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
+        selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
+        
+        # Preprocessing
+        sel_df = df
+        sel_df['meal'] = sel_df.str.lower()
+        st.write(sel_df.tail())
+        st.write(f'Zahl der gespeicherten Essen: {df.shape[0]}')
+        for sel_comp in selected_components:
+                val = component_dict[sel_comp]
+                if type(val) is int:
+                        val = sel_comp
+                elif type(val) is list:
+                        sublist = val[1:]
+                        val = val[0]
+                        #for replace_string in 
+
+
+
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
