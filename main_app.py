@@ -19,7 +19,7 @@ def highlight_vegetarian(df, vegetarian_column):
 
 # Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
 def slice_time(from_including, to_excluding, data):
-        return data.loc[(data['date'].astype(datetime64) >= pd.to_datetime(from_including)) & (data['date'].astype(datetime64) < pd.to_datetime(to_excluding))]
+        return data.loc[[(pd.to_datetime(date) >= pd.to_datetime(from_including)) & (pd.to_datetime(date) < pd.to_datetime(to_excluding)) for date in data['date']]]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
