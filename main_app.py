@@ -81,8 +81,6 @@ with tab1:
 
 
 with tab2:
-        fig, ax = plt.subplots()
-
         past_weeks = st.slider('Aktuelle Woche und vergangene ... Wochen', min_value = 3, max_value = 103, value = 11, step = 1)
         
         use_lines = st.checkbox('Durchschnittspreise als Linien- statt Balkendiagramm darstellen', value = False)
