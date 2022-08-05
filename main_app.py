@@ -127,7 +127,7 @@ with tab3:
         selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
         
         # Preprocessing
-        sel_df = df
+        sel_df = df.copy()
         sel_df['meal'] = sel_df['meal'].str.lower()
         st.write(f'Zahl der gespeicherten Essen: {df.shape[0]}')
         for sel_comp in selected_components:
