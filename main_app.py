@@ -1,11 +1,8 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
-import altair as alt
 import pandas as pd
-import matplotlib.ticker as ticker
 from sklearn.linear_model import LinearRegression
 from fetcher import *
 
@@ -18,7 +15,7 @@ def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
 def highlight_vegetarian(df, vegetarian_column):
-        return ['background-color: #AAFFAA' if vegetarian_column.iloc[x] else 'background-color: #FFAAAA' for x in np.arange(df.shape[0])]
+        return ['background-color: #440044' if vegetarian_column.iloc[x] else 'background-color: #004444' for x in np.arange(df.shape[0])]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
