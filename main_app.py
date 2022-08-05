@@ -17,6 +17,10 @@ def effective_day():
 def highlight_vegetarian(df, vegetarian_column):
         return ['background-color: #004400' if vegetarian_column.iloc[x] else 'background-color: #440000' for x in np.arange(df.shape[0])]
 
+# Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
+def slice_time(from_including, to_excluding, data):
+        
+
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
@@ -119,7 +123,7 @@ with tab3:
                           'Suppe': 0, 'Kartoffeln': 'Kartoffel', 'Käse': 0, 'Auflauf': 0, 'Brötchen': 0, 'Schwein': 0, 'Steak': 0,
                           'Erbsen': 'Erbse', 'Couscous': 0, 'Chili': 0, 'Tzatziki': 0, 'Lachs': 0, 'Pute': 0, 'Salat': 0,
                           'Blumenkohl': 0, 'Linsen': 'Linse', 'Soße': 0, 'Wokgerichte': 'Wok', 'Pilze': ['Pilz','Champignon'],
-                          'Hähnchen': ['Hähnchen', 'Huhn', 'Hühner'], 'Rind': 0, 'Curry': 0, 'Gulasch': 0, 'Sauerkraut': 0,
+                          'Huhn': ['Hähnchen', 'Huhn', 'Hühner'], 'Rind': 0, 'Curry': 0, 'Gulasch': 0, 'Sauerkraut': 0,
                           'Gyros': 0, 'Rostbrätel': 0, 'Bratwurst': 0, 'Tomaten': 'Tomate', 'Minestrone': 0,
                           'Rotkohl': 0, 'Frikadelle': 0, 'Kartoffelpuffer': 'Puffer', 'Mozzarellasticks': 0,
                           'Shake': 0, 'Bowl': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
