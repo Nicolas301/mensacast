@@ -70,8 +70,7 @@ with tab1:
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename(columns={'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
         df_current_day.set_index(np.arange(1,df_current_day.shape[0]+1),inplace=True)
         df_current_day.sort_values(by='Preis', inplace = True)
-        df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',').apply(highlight_vegetarian, axis = 1)
-        df_current_day.drop(columns=['Vegetarisch'])
+        df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',').apply(highlight_vegetarian, axis = 1).hide_columns(subset=['Vegetarisch'])
         st.table(df_style)
 
 
