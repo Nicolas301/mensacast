@@ -20,7 +20,7 @@ def effective_day():
 
 def highlight_vegetarian(df, vegetarian_column):
         st.write([x.index[0] for x in df])
-        return ['background-color: #AAFFAA' if vegetarian_column.iloc[x.index[0]-1] else 'background-color: #FFAAAA' for x in df]
+        return ['background-color: #AAFFAA' if vegetarian_column.iloc[x] else 'background-color: #FFAAAA' for x in np.arange(df.shape[0])]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
