@@ -54,9 +54,9 @@ st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken'])
 
 with tab1:
-        st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
         selected_weekday = st.selectbox('Wochentag', ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'],index=min(today_index,4))
+        highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False)
         start_of_day = pd.to_datetime(monday())
         if selected_weekday == 'Dienstag':
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
@@ -71,7 +71,9 @@ with tab1:
         df_current_day.set_index(np.arange(1,df_current_day.shape[0]+1),inplace=True)
         df_current_day.sort_values(by='Preis', inplace = True)
         vegetarian_column = df_current_day['Vegetarisch']
-        df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',').apply(highlight_vegetarian, vegetarian_column = vegetarian_column, axis = 0)
+        df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',')
+        if highlight_veg:
+                df_style = df_style.apply(highlight_vegetarian, vegetarian_column = vegetarian_column, axis = 0)
         df_current_day.drop(columns=['Vegetarisch'], inplace=True)
         st.table(df_style)
 
