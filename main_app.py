@@ -140,7 +140,7 @@ with tab3:
                           'Rotkohl': 0, 'Frikadelle': 0, 'Kartoffelpuffer': 'Puffer', 'Mozzarellasticks': 0,
                           'Shake': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
         
-        selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
+        selected_components = st.multiselect('Komponentenkombination', sorted(list(component_dict.keys())))
         
         # Preprocessing
         sliced_df = slice_time(df,effective_day()-pd.DateOffset(months=12))
