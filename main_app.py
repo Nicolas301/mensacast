@@ -117,9 +117,7 @@ with tab3:
                         'Suppe': 'Suppe', 'Kartoffeln': 'Kartoffel', 'Käse': 'Käse',
                         'Auflauf': 'Auflauf'}
         
-        selected_component = st.multiselect('Komponenten', list(component_dict.keys()))
-        for x in selected_component:
-                st.write(type(component_dict[x]))
+        selected_component = st.multiselect('Komponenten', list(component_dict.keys()).sort())
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
