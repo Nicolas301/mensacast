@@ -95,10 +95,8 @@ with tab2:
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
         
         trend = regression.predict(np.array(past_weeks).reshape(-1,1))[0]/regression.predict(np.array(0).reshape(-1,1))[0]
-        trend = np.power(trend,1/(past_weeks+1))
-        st.write(trend)
-        
-        st.metric('Preistrend',value='',delta=f'{round(100*regression.coef_[0],1)} %'.replace('.',','), delta_color='inverse',help='... im Diagrammzeitraum')
+        trend = np.power(trend,1/(past_weeks+1))-1
+        st.metric('Wöchentlicher Preistrend',value='',delta=f'{round(100*trend,1)} %'.replace('.',','), delta_color='inverse',help='... basierend auf den Daten im Diagrammzeitraum')
 
         custom_scale = [[0, '#007700'],[.5, '#FFFFAA'],[1, '#AA0000']]
         if not(use_lines):
