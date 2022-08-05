@@ -37,7 +37,7 @@ def binom_quantile(n1, n2, X1, X2):
         p_hat = (X1+X2)/(n1+n2)
         st.write((p1_hat-p2_hat))
         st.write(np.sqrt(p_hat*(1-p_hat)*(1/n1+1/n2)))
-        z = (p1_hat-p2_hat)/np.sqrt(p_hat*(1-p_hat)*(1/n1+1/n2))
+        z = (p1_hat-p2_hat)/np.power(p_hat*(1-p_hat)*(1/n1+1/n2),.5)
         return sta.norm.cdf(z)
 
 @st.cache(allow_output_mutation=True)
