@@ -113,8 +113,6 @@ with tab3:
         
         component_dictionary = {'Pommes': 'Pommes', 'Reis': 'Reis', 'Soja': 'Soja', 'Tofu': 'Tofu',
                                 'Ananas': 'Ananas', 'Schnitzel': 'Schnitzel', 'Nudeln': 'Nudel'}
-        st.write(component_dictionary['Pommes'])
-        st.write(component_dictionary.Pommes)
         
         selected_component = st.multiselect('Komponente', list(component_list.keys()))
 
