@@ -49,6 +49,9 @@ def calculate_average_week_prices(beginning_of_week):
 eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 
+number_past_days = slice_time(df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))['date'].shape[0]
+number_present_days = slice_time(df, effective_day()-pd.DateOffset(months=3))['date'].shape[0]
+
 st.header('MensaCast')
 st.write('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
 st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
@@ -151,8 +154,6 @@ with tab3:
         sel_df = df.iloc[sel_df.index]
         sel_df_past = slice_time(sel_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
         sel_df_present = slice_time(sel_df, effective_day()-pd.DateOffset(months=3))
-        number_past_days = slice_time(df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))['date'].shape[0]
-        number_present_days = slice_time(df, effective_day()-pd.DateOffset(months=3))['date'].shape[0]
         st.write(f'Zahl der in der älteren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_past.shape[0]}/{number_past_days}')
         st.write(f'Zahl der in der jüngeren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_present.shape[0]}/{number_present_days}')
 
