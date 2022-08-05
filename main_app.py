@@ -137,8 +137,8 @@ with tab3:
                           'Blumenkohl': 0, 'Linsen': 'Linse', 'Soße': 0, 'Wokgerichte': 'Wok', 'Pilze': ['Pilz','Champignon'],
                           'Huhn': ['Hähnchen', 'Huhn', 'Hühner'], 'Rind': 0, 'Curry': 0, 'Gulasch': 0, 'Sauerkraut': 0,
                           'Gyros': 0, 'Rostbrätel': 0, 'Bratwurst': 0, 'Tomaten': 'Tomate', 'Minestrone': 0,
-                          'Rotkohl': 0, 'Frikadelle': 0, 'Kartoffelpuffer': 'Puffer', 'Mozzarellasticks': 0,
-                          'Shake': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0}
+                          'Rotkohl': 0, 'Frikadelle': 0, 'Puffer': 'Puffer', 'Mozzarellasticks': 0,
+                          'Shake': 0, 'Falafel': 0, 'Nuggets': 0, 'Eintopf': 0, 'Rührei': 0, 'Kartoffeltaschen': 0, 'Spinat': 0, 'Klöße': ['Klöße', 'Kloß']}
         
         selected_components = st.multiselect('Komponentenkombination', sorted(list(component_dict.keys())))
         
