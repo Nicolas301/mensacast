@@ -66,9 +66,7 @@ with tab1:
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename(columns={'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
         st.write(df_current_day)
         for index,row in df_current_day.iterrows():
-                st.latex(r'''\begin{itemize}
-                \item \begin{text} Test\end{text}
-                \end{itemize}''')
+                st.latex(r'a^2')
 
 
 with tab2:
