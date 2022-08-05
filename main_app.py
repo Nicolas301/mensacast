@@ -104,7 +104,7 @@ with tab2:
         layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199',hovermode='x')
         fig = go.Figure(data=[avg_plot,lin_reg_plot], layout=layout)
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
-        st.metric('Preistrend',regression.coef_[0])
+        st.metric('Preistrend',value='',delta=regression.coef_[0])
         
 with tab3:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
