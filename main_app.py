@@ -1,4 +1,5 @@
 import streamlit as st
+import scipy.stats as sta
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
@@ -35,7 +36,7 @@ def binom_quantile(n1, n2, X1, X2):
         p2_hat = X2/n2
         p_hat = (X1+X2)/(n1+n2)
         z = (p1_hat-p2_hat)/np.sqrt(p_hat*(1-p_hat)*(1/n1+1/n2))
-        return st.norm.cdf(z)
+        return sta.norm.cdf(z)
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
