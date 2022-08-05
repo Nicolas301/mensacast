@@ -32,13 +32,18 @@ def past_day_numbers():
         return number_past_days, number_present_days
 
 def binom_quantile(n1, n2, X1, X2):
-        p1_hat = X1/n1
-        p2_hat = X2/n2
-        p_hat = (X1+X2)/(n1+n2)
-        nom = float(p1_hat-p2_hat)
-        denom = float(np.sqrt(p_hat*(1-p_hat)*(1/n1+1/n2)))
-        z = nom/denom
-        return sta.norm.cdf(z)
+        if X1 == 0 and X2 == 0:
+                return float('-inf')
+        elif X1 == n1 and X2 == n2:
+                return float('inf')
+        else:
+                p1_hat = X1/n1
+                p2_hat = X2/n2
+                p_hat = (X1+X2)/(n1+n2)
+                nom = p1_hat-p2_hat
+                denom = np.sqrt(p_hat*(1-p_hat)*(1/n1+1/n2))
+                z = nom/denom
+                return sta.norm.cdf(z)
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
