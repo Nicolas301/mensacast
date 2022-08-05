@@ -149,8 +149,10 @@ with tab3:
                                 sel_df['meal'] = sel_df['meal'].str.replace(replace_string.lower(), val.lower())
                 sel_df = sel_df[[val.lower() in x for x in sel_df['meal']]]
         sel_df = df.iloc[sel_df.index]
-        st.write(f'Zahl der in dem Zeitraum gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
-        st.table(sel_df.tail(5))
+        sel_df_past = slice_time(sel_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
+        sel_df_present = slice_time(sel_df, effective_day()-pd.DateOffset(months=3))
+        st.write(f'Zahl der in der älteren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_past.shape[0]}')
+        st.write(f'Zahl der in der jüngeren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_present.shape[0]}')
 
 
 with tab4:
