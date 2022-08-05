@@ -10,12 +10,17 @@ from sklearn.linear_model import LinearRegression
 from fetcher import *
 import time
 
+# Gibt den Montag der aktuellen Woche zurück
 def monday():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(days=pd.Timestamp.today().weekday())).date()
 
 # Dummytag, um tägliches Neuauslesen zu erzwingen
 def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
+
+def highlight_vegetarian(df):
+        highlight_df = df.loc['Vegetarisch'] >= threshold
+        return ['background-color: green' if df.loc['Vegetarisch'] else '' for x in df]
 
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
