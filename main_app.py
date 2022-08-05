@@ -66,19 +66,19 @@ with tab1:
         df_current_day = df[(pd.to_datetime(df['date']) >= start_of_day) & (pd.to_datetime(df['date']) < end_of_day)].drop(columns=['id','date']).rename(columns={'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
         st.write(df_current_day)
         st.markdown("""<table>
-<thead>
-<tr>
-<th>foo</th>
-<th>bar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>baz</td>
-<td>bim</td>
-</tr>
-</tbody>
-</table>"""
+        <thead>
+        <tr>
+        <th>foo</th>
+        <th>bar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>baz</td>
+        <td>bim</td>
+        </tr>
+        </tbody>
+        </table>"""
 
 
 with tab2:
