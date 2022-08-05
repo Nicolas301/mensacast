@@ -162,7 +162,7 @@ with tab3:
         st.write(f'Zahl der Gerichte in den letzten drei Monaten: {number_present_days}')
         
         if sel_df_past.shape[0] == 0:
-                delta = 0
+                delta = '0,0 %'
         else:
                 delta = f'{round(((sel_df_present.shape[0]/number_present_days)/(sel_df_past.shape[0]/number_past_days)-1)*100,1)} %'.replace('.',',')
         st.metric('Häufigkeit in den letzten drei Monaten', sel_df_present.shape[0], delta=delta,help='Relative Häufigkeit der Komponentenkombination in den letzten drei Monaten verglichen mit den neun Monaten davor')
