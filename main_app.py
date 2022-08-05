@@ -104,7 +104,7 @@ with tab2:
         else:
                 avg_plot = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['avg_prices'], name='Durchschnitt', line=dict(color='#0000FF'), showlegend = False)
         lin_reg_plot = go.Scatter(mode = 'lines', x = plot_data['bar_labels'], y = plot_data['lin_reg_values'],line=dict(color="#FF00FF"), name = 'Linearer Trend', showlegend = False)
-        layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#001199',hovermode='x')
+        layout = go.Layout(title="Durchschnittspreise in Euro:",title_font_color='#00AAFF',hovermode='x')
         fig = go.Figure(data=[avg_plot,lin_reg_plot], layout=layout)
         st.plotly_chart(fig, use_container_width=True, config=dict(displayModeBar=False))
         
