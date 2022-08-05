@@ -150,8 +150,7 @@ with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         
         vegetarian_df = df.loc[df['is_vegetarian']]
-        st.write(vegetarian_df.shape[0])
-        st.write(df.shape[0])
+        st.write(str(vegetarian_df.dtypes))
         veg_share = vegetarian_df.shape[0]/df.shape[0]
         st.metric('Anteil vegetarischer Gerichte',f'{round(100*veg_share,2)} %')
 
