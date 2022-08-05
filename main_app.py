@@ -94,7 +94,7 @@ with tab2:
                                   'bar_labels': bar_labels[(np.size(bar_labels)-past_weeks-1):],
                                   'lin_reg_values': regression.predict(np.arange(past_weeks+1).reshape(-1,1))})
         
-        trend = regression.predict(np.ndarray(past_weeks).reshape(-1,1))
+        trend = regression.predict(np.array(past_weeks).reshape(-1,1))
         st.write(trend)
         
         st.metric('Preistrend',value='',delta=f'{round(100*regression.coef_[0],1)} %'.replace('.',','), delta_color='inverse',help='... im Diagrammzeitraum')
