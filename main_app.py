@@ -168,7 +168,7 @@ with tab3:
         sel_df_present = slice_time(sel_df, effective_day()-pd.DateOffset(months=3))
         st.write(f'Zahl der in der älteren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_past.shape[0]}/{number_past_days}')
         st.write(f'Zahl der in der jüngeren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_present.shape[0]}/{number_present_days}')
-        st.write(f'Quantil: {binom_quantile(sel_df_past, sel_df_present, sel_df_past.shape[0], sel_df_present.shape[0])}')
+        st.write(f'Quantil: {binom_quantile(number_past_days, number_present_days, sel_df_past.shape[0], sel_df_present.shape[0])}')
 
 
 with tab4:
