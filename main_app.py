@@ -31,20 +31,6 @@ def past_day_numbers():
         number_present_days = slice_time(df, effective_day()-pd.DateOffset(months=3))['date'].shape[0]
         return number_past_days, number_present_days
 
-def binom_quantile(n1, n2, X1, X2):
-        if X1 == 0 and X2 == 0:
-                return float('-inf')
-        elif X1 == n1 and X2 == n2:
-                return float('inf')
-        else:
-                p1_hat = X1/n1
-                p2_hat = X2/n2
-                p_hat = (X1+X2)/(n1+n2)
-                nom = p1_hat-p2_hat
-                denom = np.sqrt(p_hat*(1-p_hat)*(1/n1+1/n2))
-                z = nom/denom
-                return sta.norm.cdf(z)
-
 @st.cache(allow_output_mutation=True)
 def calculate_average_week_prices(beginning_of_week):
         iterated_week = pd.Timestamp(beginning_of_week)
@@ -174,9 +160,9 @@ with tab3:
         sel_df = df.iloc[sel_df.index]
         sel_df_past = slice_time(sel_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
         sel_df_present = slice_time(sel_df, effective_day()-pd.DateOffset(months=3))
+        st.metric('Häufigkeit in den letzten drei Monaten', sel_df_present.shape[0])
         st.write(f'Zahl der in der älteren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_past.shape[0]}/{number_past_days}')
         st.write(f'Zahl der in der jüngeren Vergangenheit gespeicherten Essen mit diesen Komponenten: {sel_df_present.shape[0]}/{number_present_days}')
-        st.write(f'Quantil: {binom_quantile(number_past_days, number_present_days, sel_df_past.shape[0], sel_df_present.shape[0])}')
 
 
 with tab4:
