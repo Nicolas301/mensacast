@@ -131,9 +131,10 @@ with tab3:
         selected_components = st.multiselect('Komponenten', sorted(list(component_dict.keys())))
         
         # Preprocessing
-        sel_df = df.copy()
+        sliced_df = slice_time(,,df)
+        sel_df = sliced_df.copy()
         sel_df['meal'] = sel_df['meal'].str.lower()
-        st.write(f'Zahl der gespeicherten Essen: {df.shape[0]}')
+        st.write(f'Zahl der gespeicherten Essen seit {(monday()-pd.DateOffset(years=1)).strftime("%d.%m.%Y")}: {df.shape[0]}')
         for sel_comp in selected_components:
                 val = component_dict[sel_comp]
                 if type(val) is int:
@@ -145,10 +146,8 @@ with tab3:
                                 sel_df['meal'] = sel_df['meal'].str.replace(replace_string.lower(), val.lower())
                 sel_df = sel_df[[val.lower() in x for x in sel_df['meal']]]
         sel_df = df.iloc[sel_df.index]
-        st.write(f'Zahl der gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
+        st.write(f'Zahl der in dem Zeitraum gespeicherten Essen mit der obigen Komponentenauswahl: {sel_df.shape[0]}')
         st.table(sel_df.tail(5))
-        sel_df = slice_time('2022-07-01','2022-08-05',sel_df)
-        st.write(sel_df)
 
 
 with tab4:
