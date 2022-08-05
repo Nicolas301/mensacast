@@ -132,7 +132,7 @@ with tab3:
         # einzelner Wert: ersetze Schlüssel durch Wert
         # Liste von Werten: Werte sind gleichbedeutend
         component_dict = {'Pommes': ['Pommes', 'Twister'], 'Reis': 0, 'Soja': 0, 'Tofu': 0, 'Ananas': 0, 'Schnitzel': 0, 'Nudeln': ['Nudel','Spirelli','Spaghetti'],
-                          'Suppe': 0, 'Kartoffeln': 'Kartoffel', 'Käse': 0, 'Auflauf': 0, 'Brötchen': 0, 'Schwein': 0, 'Steak': 0,
+                          'Suppe': 0, 'Kartoffeln': 'Kartoffel', 'Käse': ['Mozzarella','Käse'], 'Auflauf': 0, 'Brötchen': 0, 'Schwein': 0, 'Steak': 0,
                           'Erbsen': 'Erbse', 'Couscous': 0, 'Chili': 0, 'Tzatziki': 0, 'Lachs': 0, 'Pute': 0, 'Salat': 0,
                           'Blumenkohl': 0, 'Linsen': 'Linse', 'Soße': ['Soße', 'Sosse'], 'Wokgerichte': 'Wok', 'Pilze': ['Pilz','Champignon'],
                           'Huhn': ['Hähnchen', 'Huhn', 'Hühner'], 'Rind': 0, 'Curry': 0, 'Gulasch': 0, 'Sauerkraut': 0,
