@@ -175,6 +175,8 @@ with tab3:
                 sel_df = sel_df.drop(columns=['id']).rename(columns={'date': 'Datum', 'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
                 sel_df.set_index(np.arange(1,sel_df.shape[0]+1),inplace=True)
                 sel_df['Datum'] = pd.to_datetime(sel_df['Datum'])
+                sel_df['Vegetarisch'] = sel_df['Vegetarisch'].astype(str)
+                sel_df['Vegetarisch'] = ['Ja' if x == '1' else 'Nein' for x in sel_df['Vegetarisch']]
                 sel_df_style = sel_df.style.format({'Preis': '{:.2f}€', 'Datum': '{:%d.%m.%Y}'}, decimal = ',')
                 st.table(sel_df_style)
 
