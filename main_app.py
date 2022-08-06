@@ -165,7 +165,15 @@ with tab3:
                 delta = '0,0 %'
         else:
                 delta = f'{round(((sel_df_present.shape[0]/number_present_days)/(sel_df_past.shape[0]/number_past_days)-1)*100,1)} %'.replace('.',',')
+        
         st.metric('Häufigkeit in den letzten drei Monaten', sel_df_present.shape[0], delta=delta,help='... und relative Häufigkeit der Komponentenkombination in den letzten drei Monaten verglichen mit den neun Monaten davor')
+        
+        if sel_df.shape[0] > 0:
+                st.write('Letzte fünf Gerichte mit dieser Komponentenkombination in den letzten zwölf Monaten:')
+                sel_df = sel_df.drop(columns=['id']).rename(columns={'date': 'Datum', 'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
+                sel_df.set_index(np.arange(1,sel_df+1),inplace=True)
+                sel_df_style = sel_df.style.format({'Preis': '{:.2f}€'}, decimal = ',')
+                st.table(sel_df_style)
 
 
 with tab4:
