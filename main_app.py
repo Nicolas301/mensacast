@@ -170,6 +170,8 @@ with tab3:
         
         if sel_df.shape[0] > 0:
                 st.write('Letzte fünf Gerichte mit dieser Komponentenkombination in den letzten zwölf Monaten:')
+                if sel_df.shape[0] > 5:
+                        sel_df = sel_df.iloc[sel_df.shape[0]-5:]
                 sel_df = sel_df.drop(columns=['id']).rename(columns={'date': 'Datum', 'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
                 sel_df.set_index(np.arange(1,sel_df.shape[0]+1),inplace=True)
                 sel_df_style = sel_df.style.format({'Preis': '{:.2f}€'}, decimal = ',')
