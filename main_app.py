@@ -26,9 +26,9 @@ def slice_time(data, from_including, to_excluding=None):
                 return data.loc[[pd.to_datetime(date) >= pd.to_datetime(from_including) for date in data['date']]]
 
 @st.cache
-def past_day_numbers():
-        number_past_days = slice_time(df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))['date'].shape[0]
-        number_present_days = slice_time(df, effective_day()-pd.DateOffset(months=3))['date'].shape[0]
+def past_day_numbers(day):
+        number_past_days = slice_time(df, day-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))['date'].shape[0]
+        number_present_days = slice_time(df, day-pd.DateOffset(months=3))['date'].shape[0]
         return number_past_days, number_present_days
 
 @st.cache(allow_output_mutation=True)
@@ -56,7 +56,7 @@ def calculate_average_week_prices(beginning_of_week):
 eff_day = effective_day()
 df, fetch_date = fetch_data(eff_day)
 
-number_past_days, number_present_days = past_day_numbers()
+number_past_days, number_present_days = past_day_numbers(effective_day())
 
 st.header('MensaCast')
 st.write('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
