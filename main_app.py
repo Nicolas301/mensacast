@@ -174,8 +174,8 @@ with tab3:
                         sel_df = sel_df.iloc[sel_df.shape[0]-5:]
                 sel_df = sel_df.drop(columns=['id']).rename(columns={'date': 'Datum', 'meal': 'Essen', 'price': 'Preis', 'is_vegetarian': 'Vegetarisch'})
                 sel_df.set_index(np.arange(1,sel_df.shape[0]+1),inplace=True)
-                sel_df_style = sel_df.style.format({'Preis': '{:.2f}€', 'Datum': '{:%d.%m.%Y}'}, decimal = ',')
-                st.write(sel_df_style)
+                sel_df_style = sel_df.style.format({'Preis': '{:.2f}€'}, decimal = ',')
+                st.table(sel_df_style)
 
 
 with tab4:
