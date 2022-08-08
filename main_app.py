@@ -181,7 +181,7 @@ with tab4:
         st.write('Alle Statistiken beziehen sich auf die letzten drei Monate.')
         vegetarian_df = df.loc[[bool(x) for x in df['is_vegetarian']]]
         vegetarian_df_past = slice_time(vegetarian_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
-        st.write(vegetarian_df_past)
+        st.write(vegetarian_df_present)
         vegetarian_df_present = slice_time(vegetarian_df, effective_day()-pd.DateOffset(months=3))
         veg_share_past = vegetarian_df_past.shape[0]/number_past_days
         veg_share_present = vegetarian_df_present.shape[0]/number_present_days
