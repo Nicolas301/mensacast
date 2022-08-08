@@ -59,7 +59,8 @@ df, fetch_date = fetch_data(eff_day)
 number_past_days, number_present_days = past_day_numbers(effective_day())
 
 st.header('MensaCast')
-st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
+st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
+st.caption('Build 1, Stand: 8. August 2022')
 
 tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken'])
 
