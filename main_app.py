@@ -59,7 +59,6 @@ df, fetch_date = fetch_data(eff_day)
 number_past_days, number_present_days = past_day_numbers(effective_day())
 
 st.header('MensaCast')
-st.write('Data Mining mit dem Speiseplan der Ilmenauer Hauptmensa.')
 st.caption(f'Datenstand: {fetch_date.strftime("%d.%m.%Y, %X")}.')
 
 tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken'])
