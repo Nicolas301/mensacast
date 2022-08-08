@@ -156,7 +156,7 @@ with tab3:
                         for replace_string in sublist:
                                 sel_df['meal'] = sel_df['meal'].str.replace(replace_string.lower(), val.lower())
                 sel_df = sel_df[[val.lower() in x for x in sel_df['meal']]]
-        sel_df = sliced_df.iloc[sel_df.index]
+        #sel_df = df.iloc[sel_df.index]
         sel_df_past = slice_time(sel_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
         sel_df_present = slice_time(sel_df, effective_day()-pd.DateOffset(months=3))
         st.write(f'Zahl der Gerichte in den letzten drei Monaten: {number_present_days}')
