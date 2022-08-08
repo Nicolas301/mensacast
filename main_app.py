@@ -179,6 +179,8 @@ with tab3:
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
+        st.write('Alle Statistiken beziehen sich auf die letzten drei Monate. Alle Entwicklungsindikatoren beziehen sich auf diesen Zeitraum verglichen mit den neun Monaten davor.')
         sel_df_past = slice_time(df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
         sel_df_present = slice_time(df, effective_day()-pd.DateOffset(months=3))
-        st.metric('Zahl der Gerichte in den letzten drei Monaten', sel_df_present.shape[0], delta = f'{round(100*(3*sel_df_present.shape[0]/sel_df_past.shape[0]-1),1)} %'.replace('.',','))
+        avg_present = sel_df_present.shape[0]/pd.unique(sel_df_present['date'])
+        st.metric('Durchschnittliche Zahl der Gerichte', avg_present, delta = f'{round(100*(3*sel_df_present.shape[0]/sel_df_past.shape[0]-1),1)} %'.replace('.',','))
