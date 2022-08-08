@@ -179,8 +179,11 @@ with tab3:
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
         
-        vegetarian_df = df.loc[[bool(x) for x in df['is_vegetarian']]]
-        veg_share = vegetarian_df.shape[0]/df.shape[0]
-        st.metric('Anteil vegetarischer Gerichte',f'{round(100*veg_share,2)} %'.replace('.',','))
+        vegetarian_df = slice_time(df.loc[[bool(x) for x in df['is_vegetarian']]], effective_day()-pd.DateOffset(months=12))
+        vegetarian_df_past = slice_time(vegetarian_df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
+        vegetarian_df_present = slice_time(vegetarian_df, effective_day()-pd.DateOffset(months=3))
+        veg_share_past = vegetarian_df_past.shape[0]/number_past_days
+        veg_share_present = vegetarian_df_present.shape[0]/number_present_days
+        st.metric('Anteil vegetarischer Gerichte in den letzten drei Monaten',f'{round(100*veg_share_present,2)} %'.replace('.',','))
         # Zahl der Gerichte am Tag
 
