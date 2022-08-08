@@ -182,4 +182,4 @@ with tab4:
         sel_df_past = slice_time(df, effective_day()-pd.DateOffset(months=12), effective_day()-pd.DateOffset(months=3))
         sel_df_present = slice_time(df, effective_day()-pd.DateOffset(months=3))
         st.metric('Zahl der Gerichte in den letzten drei Monaten', sel_df_present.shape[0], delta = f'{round(100*(3*sel_df_present.shape[0]/sel_df_past.shape[0]-1),1)} %'.replace('.',','))
-
+        st.write(sel_df_present)
