@@ -73,7 +73,7 @@ with tab1:
         weekday_labels.append(f'Donnerstag, {(pd.to_datetime(monday()) + np.timedelta64(3,"D")).strftime("%d.%m.%Y")}')
         weekday_labels.append(f'Freitag, {(pd.to_datetime(monday()) + np.timedelta64(4,"D")).strftime("%d.%m.%Y")}')
         selected_weekday = st.selectbox('Wochentag', weekday_labels,index=min(today_index,4))
-        highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False)
+        highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False, help = 'In seltenen Fällen werden Gerichte vom Studierendenwerk fälschlich als vegetarisch oder nicht-vegetarisch eingeordnet. Dies ist kein Fehler dieser Webseite.')
         start_of_day = pd.to_datetime(monday())
         if selected_weekday == weekday_labels[1]:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
