@@ -179,4 +179,5 @@ with tab3:
 
 with tab4:
         st.write('Dieser Teil der Seite befindet sich noch in Entwicklung!')
+        st.metric('Zahl der Gerichte in den letzten zwölf Monaten', slice_time(df,effective_day()-pd.DateOffset(months=12)).shape[0])
 
