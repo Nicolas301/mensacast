@@ -185,5 +185,6 @@ with tab4:
         veg_share_past = vegetarian_df_past.shape[0]/number_past_days
         veg_share_present = vegetarian_df_present.shape[0]/number_present_days
         st.write(veg_share_past)
+        st.write(veg_share_present)
         st.metric('Anteil vegetarischer Gerichte in den letzten drei Monaten',f'{round(100*veg_share_present,2)} %'.replace('.',','), delta = f'{round(100*(veg_share_present/veg_share_past-1),1)} %'.replace('.',','))
 
