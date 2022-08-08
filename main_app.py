@@ -145,7 +145,7 @@ with tab3:
         # Preprocessing
         sliced_df = slice_time(df,effective_day()-pd.DateOffset(months=12))
         sel_df = sliced_df.copy()
-        sel_df['meal'] = sel_df['meal'].str.lower().replace('trindb','')
+        sel_df['meal'] = sel_df['meal'].str.lower().str.replace('strindberg','')
         for sel_comp in selected_components:
                 val = component_dict[sel_comp]
                 if type(val) is int:
