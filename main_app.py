@@ -225,9 +225,12 @@ with tab5:
                 # Apriori-FPM
                 nlp = spacy.load('de_core_news_sm') # NOUN und PROPN sind fine
                 noun_list = []
-                st.write(type(df['is_vegetarian'].iloc[0]))
-                doc = nlp(df['meal'].iloc[-2])
-                st.write(type(doc))
-                for token in doc:
-                        st.write(token.text + ' -- ' + token.pos_ + ' // ' + token.dep_ + '**' + str(type(token.pos_)))
+                nonveg_series = df[df['is_vegetarian'] == 0]['meal']
+                for meal in nonveg_series:
+                        doc = nlp(meal)
+                        for token in doc:
+                                if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
+                                        noun_list.append(token.text)
+                noun_list = list(set(noun_list))
+                st.write(noun_list)
                 
