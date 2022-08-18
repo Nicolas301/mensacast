@@ -202,3 +202,6 @@ with tab5:
         st.table(clog_df)
         
         st.write('Geplante kommende Updates:')
+        
+        upcoming_df = pd.read_csv('upcoming.txt')
+        st.table(upcoming_df)
