@@ -225,7 +225,7 @@ with tab5:
                 # Bestimmung der Häufigkeit der Substantive unter allen vegetarischen und nicht-vegetarischen Gerichten
                 # Falls Komponente in nicht-vegetarischen Gerichten anteilig viel häufiger auftaucht als in vegetarischen: Flaggen als nicht-vegetarisch
                 # Essen, das keine als nicht-vegetarisch geflaggte Komponenten enthält: ist vegetarisch
-                nlp = spacy.load('de_core_news_sm') # NOUN und PROPN sind fine
+                nlp = spacy.load('de_core_news_sm')
                 noun_list = []
                 old_df = slice_time(df, pd.Timestamp(year=1970,month=1,day=1), pd.Timestamp(year=2021,month=3,day=30))
                 new_df = slice_time(df, pd.Timestamp(year=2022,month=7,day=2))
