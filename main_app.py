@@ -62,7 +62,7 @@ st.header('MensaCast')
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y")}')
 st.caption('Build 3, Stand: 18. August 2022')
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken', 'Chaneglog'])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken', 'Changelog'])
 
 with tab1:
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
