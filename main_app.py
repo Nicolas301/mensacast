@@ -194,7 +194,7 @@ with tab5:
         for build_nr in build_df['Buildnummer']:
                 clog_string = ''
                 for clog_line in clograw_df[clograw_df['Buildnummer'] == build_nr]['Change']:
-                        clog_string = clog_string + '- ' + clog_line + '  \n'
+                        clog_string = clog_string + '- ' + clog_line + '        \n'
                 clog_list.append(clog_string)
         clog_df = pd.DataFrame(data={'Buildnummer': build_df['Buildnummer'], 'Datum': build_df['Datum'], 'Änderungen': clog_list})
         hide_table_row_index = """ <style> thead tr th:first-child {display:none} tbody th {display:none} </style> """
