@@ -199,7 +199,8 @@ with tab5:
                 for clog_line in clograw_df[clograw_df['Buildnummer'] == build_nr]['Change']:
                         if not(added_metadata):
                                 buildnr_list.append(str(build_nr))
-                                date_list.append(str(build_df[build_df['Buildnummer']==build_nr].iloc[0]))
+                                date_list.append(str(build_df[build_df['Buildnummer']==build_nr]['Datum'].iloc[0]))
+                                added_metadata = True
                         else:
                                 buildnr_list.append('')
                                 date_list.append('')
