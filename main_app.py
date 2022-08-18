@@ -220,16 +220,18 @@ with tab5:
         
         if display_experimental == 'EXPERIMENTAL':
                 st.write('Experimenteller Modus hier.')
-                # PoS-Tagging für sämtliche Wörter in den Beschreibungen nichtvegetarischer Gerichte
-                # Herausfiltern der Substantive
-                # Apriori-FPM
+                # PoS-Tagging für sämtliche Wörter in den Beschreibungen von Gerichten
+                # Herausfiltern der Substantive als Komponenten
+                # Bestimmung der Häufigkeit der Substantive unter allen vegetarischen und nicht-vegetarischen Gerichten
+                # Falls Komponente in nicht-vegetarischen Gerichten anteilig viel häufiger auftaucht als in vegetarischen: Flaggen als nicht-vegetarisch
+                # Essen, das keine als nicht-vegetarisch geflaggte Komponenten enthält: ist vegetarisch
                 nlp = spacy.load('de_core_news_sm') # NOUN und PROPN sind fine
                 noun_list = []
                 old_df = slice_time(df, pd.Timestamp(year=1970,month=1,day=1), pd.Timestamp(year=2021,month=3,day=30))
                 new_df = slice_time(df, pd.Timestamp(year=2022,month=7,day=2))
                 viable_df = pd.concat([old_df,new_df])
-                nonveg_series = viable_df[viable_df['is_vegetarian'] == 0]['meal']
-                for meal in nonveg_series:
+                meal_series = viable_df['meal']
+                for meal in meal_series:
                         doc = nlp(meal)
                         for token in doc:
                                 if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
