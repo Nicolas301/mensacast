@@ -60,9 +60,9 @@ number_past_days, number_present_days = past_day_numbers(effective_day())
 
 st.header('MensaCast')
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y")}')
-st.caption('Build 2, Stand: 16. August 2022') # Vorher: Build 1, Stand: 8. August 2022
+st.caption('Build 3, Stand: 18. August 2022')
 
-tab1, tab2, tab3, tab4 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken'])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken', 'Chaneglog'])
 
 with tab1:
         today_index = pd.Timestamp.today(tz='Europe/Berlin').weekday()
@@ -185,3 +185,6 @@ with tab4:
         avg_present = sel_df_present.shape[0]/pd.unique(sel_df_present['date']).shape[0]
         avg_past = sel_df_past.shape[0]/pd.unique(sel_df_past['date']).shape[0]
         st.metric('Durchschnittliche Zahl der Gerichte', str(round(avg_present,1)).replace('.',','), delta = f'{round(100*(avg_present/avg_past-1),1)} %'.replace('.',','))
+        
+with tab5:
+        
