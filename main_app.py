@@ -187,6 +187,7 @@ with tab4:
         st.metric('Durchschnittliche Zahl der Gerichte', str(round(avg_present,1)).replace('.',','), delta = f'{round(100*(avg_present/avg_past-1),1)} %'.replace('.',','))
         
 with tab5:
+        st.write('Bisherige Versionen:')
         build_df = pd.read_csv('builds.txt')
         clograw_df = pd.read_csv('changelog.txt')
         clog_list = []
