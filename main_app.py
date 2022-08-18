@@ -190,12 +190,20 @@ with tab5:
         st.write('Bisherige Versionen:')
         build_df = pd.read_csv('builds.txt')
         clograw_df = pd.read_csv('changelog.txt')
+        buildnr_list = []
+        date_list = []
         clog_list = []
         for build_nr in build_df['Buildnummer']:
+                added_metadata = False
                 clog_string = ''
                 for clog_line in clograw_df[clograw_df['Buildnummer'] == build_nr]['Change']:
-                        clog_string = clog_string + '- ' + clog_line + '        \n'
-                clog_list.append(clog_string)
+                        if not(added_metadata):
+                                buildnr_list.append(str(build_nr))
+                                date_list.append(str(build_df[build_nr]))
+                        else:
+                                buildnr_list.append('')
+                                date_list.append('')
+                        clog_list.append(clog_line)
         clog_df = pd.DataFrame(data={'Buildnummer': build_df['Buildnummer'], 'Datum': build_df['Datum'], 'Änderungen': clog_list})
         hide_table_row_index = """ <style> thead tr th:first-child {display:none} tbody th {display:none} </style> """
         st.markdown(hide_table_row_index, unsafe_allow_html = True)
