@@ -199,5 +199,5 @@ with tab5:
         hide_table_row_index = """ <style> thead tr th:first-child {display:none} tbody th {display:none} </style> """
         st.markdown(hide_table_row_index, unsafe_allow_html = True)
         st.table(clog_df)
-
-
+        
+        st.write('Geplante kommende Updates:')
