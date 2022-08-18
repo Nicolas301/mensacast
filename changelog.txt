@@ -1,6 +1,6 @@
 Buildnummer,Change
 1,Beginn der Buildnummerierung
 2,Entfernung der Uhrzeit beim Datenstand. Diese ist irrelevant
-2,kleine grammatikalische Änderungen
+2,Kleine grammatikalische Änderungen
 3,Changelog-Tab hinzugefügt
 3,"Experimental"-Bereich im Changelog-Tab hinzugefügt
