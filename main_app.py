@@ -204,7 +204,7 @@ with tab5:
                                 buildnr_list.append('')
                                 date_list.append('')
                         clog_list.append(clog_line)
-        clog_df = pd.DataFrame(data={'Buildnummer': build_df['Buildnummer'], 'Datum': build_df['Datum'], 'Änderungen': clog_list})
+        clog_df = pd.DataFrame(data={'Buildnummer': buildnr_list, 'Datum': date_list, 'Änderungen': clog_list})
         hide_table_row_index = """ <style> thead tr th:first-child {display:none} tbody th {display:none} </style> """
         st.markdown(hide_table_row_index, unsafe_allow_html = True)
         st.table(clog_df)
