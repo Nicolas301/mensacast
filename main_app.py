@@ -214,3 +214,8 @@ with tab5:
         
         upcoming_df = pd.read_csv('upcoming.txt')
         st.table(upcoming_df)
+        
+        display_experimental = st.text_input('Gib EXPERIMENTAL ein, um experimentelle Features einzublenden.')
+        
+        if display_experimental == 'EXPERIMENTAL':
+                st.write('Experimenteller Modus hier.')
