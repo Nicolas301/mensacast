@@ -193,7 +193,7 @@ with tab5:
         buildnr_list = []
         date_list = []
         clog_list = []
-        for build_nr in build_df['Buildnummer']:
+        for build_nr in build_df['Buildnummer'][::-1]:
                 added_metadata = False
                 clog_string = ''
                 for clog_line in clograw_df[clograw_df['Buildnummer'] == build_nr]['Change']:
