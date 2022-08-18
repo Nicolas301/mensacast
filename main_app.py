@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from fetcher import *
-import spacy_streamlit
+import spacy
 
 # Gibt den Montag der aktuellen Woche zurück
 def monday():
@@ -223,6 +223,6 @@ with tab5:
                 # PoS-Tagging für sämtliche Wörter in den Beschreibungen nichtvegetarischer Gerichte
                 # Herausfiltern der Substantive
                 # Apriori-FPM
-                nlp = spacy_streamlit.load('de_core_news_sm')
+                nlp = spacy.load('de_core_news_sm')
                 st.write(df.head(5))
                 
