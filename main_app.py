@@ -225,6 +225,7 @@ with tab5:
                 # Apriori-FPM
                 nlp = spacy.load('de_core_news_sm')
                 doc = nlp(df['meal'].iloc[-2])
+                st.write(type(doc))
                 for token in doc:
-                        st.write(token.text + ' -- ' + token.pos_ + ' // ' + token.dep_)
+                        st.write(token.text + ' -- ' + token.pos_ + ' // ' + token.dep_ + '**' + type(token.pos_))
                 
