@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from fetcher import *
+import spacy
 
 # Gibt den Montag der aktuellen Woche zurück
 def monday():
@@ -219,3 +220,9 @@ with tab5:
         
         if display_experimental == 'EXPERIMENTAL':
                 st.write('Experimenteller Modus hier.')
+                # PoS-Tagging für sämtliche Wörter in den Beschreibungen nichtvegetarischer Gerichte
+                # Herausfiltern der Substantive
+                # Apriori-FPM
+                nlp = spacy.load('de_core_news_sm')
+                st.write(df.head(5))
+                
