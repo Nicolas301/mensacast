@@ -224,7 +224,7 @@ with tab5:
                 # Herausfiltern der Substantive
                 # Apriori-FPM
                 nlp = spacy.load('de_core_news_sm')
-                doc = nlp(df['meal'].iloc[-1])
+                doc = nlp(df['meal'].iloc[0:5])
                 for token in doc:
                         st.write(token.text + ' -- ' + token.pos_ + ' // ' + token.dep_)
                 
