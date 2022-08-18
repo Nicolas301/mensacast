@@ -187,4 +187,8 @@ with tab4:
         st.metric('Durchschnittliche Zahl der Gerichte', str(round(avg_present,1)).replace('.',','), delta = f'{round(100*(avg_present/avg_past-1),1)} %'.replace('.',','))
         
 with tab5:
-     pass   
+     build_df = pd.read_csv('builds.txt')
+     st.write(build_df.summary())
+
+
+
