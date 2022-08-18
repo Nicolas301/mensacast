@@ -220,8 +220,8 @@ with tab5:
         
         if display_experimental == 'EXPERIMENTAL':
                 st.write('Experimenteller Modus hier.')
-                # PoS-Tagging für sämtliche Wörter in den Beschreibungen von Gerichten
-                # Herausfiltern der Substantive als Komponenten
+                # PoS-Tagging für sämtliche Wörter in den Beschreibungen von Gerichten - DONE
+                # Herausfiltern der Substantive als Komponenten - DONE
                 # Bestimmung der Häufigkeit der Substantive unter allen vegetarischen und nicht-vegetarischen Gerichten
                 # Falls Komponente in nicht-vegetarischen Gerichten anteilig viel häufiger auftaucht als in vegetarischen: Flaggen als nicht-vegetarisch
                 # Essen, das keine als nicht-vegetarisch geflaggte Komponenten enthält: ist vegetarisch
@@ -237,6 +237,6 @@ with tab5:
                                 if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
                                         noun_list.append(token.text)
                 noun_list = list(set(noun_list))
-                st.write('Feature: Erkennung vegetarischer Gerichte')
+                st.write('Geplantes Feature - Erkennung vegetarischer Gerichte:')
                 st.write(noun_list)
                 
