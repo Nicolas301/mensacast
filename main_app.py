@@ -196,6 +196,8 @@ with tab5:
                         clog_string = clog_string + '- ' + clog_line + '\n'
                 clog_list.append(clog_string)
         clog_df = pd.DataFrame(data={'Buildnummer': build_df['Buildnummer'], 'Datum': build_df['Datum'], 'Änderungen': clog_list})
+        hide_table_row_index = """ <style> thead tr th:first-child {display:none} tbody th {display:none} </style> """
+        st.markdown(hide_table_row_index, unsafe_allow_html = True)
         st.table(clog_df)
 
 
