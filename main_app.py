@@ -235,5 +235,6 @@ with tab5:
                                 if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
                                         noun_list.append(token.text)
                 noun_list = list(set(noun_list))
+                st.write('Feature: Erkennung vegetarischer Gerichte')
                 st.write(noun_list)
                 
