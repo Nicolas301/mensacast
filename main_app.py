@@ -223,7 +223,9 @@ with tab5:
                 # PoS-Tagging für sämtliche Wörter in den Beschreibungen nichtvegetarischer Gerichte
                 # Herausfiltern der Substantive
                 # Apriori-FPM
-                nlp = spacy.load('de_core_news_sm')
+                nlp = spacy.load('de_core_news_sm') # NOUN und PROPN sind fine
+                noun_list = []
+                st.write(type(df['is_vegetarian'].iloc[0]))
                 doc = nlp(df['meal'].iloc[-2])
                 st.write(type(doc))
                 for token in doc:
