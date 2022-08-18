@@ -1,0 +1,6 @@
+Geplante Deadline,Änderung
+15. September 2022,Laufzeitoptimierungen im derzeitigen Skript
+15. September 2022,Eigene Erkennung vegetarischer Gerichte
+20. September 2022,Statistiken zu vergangenen vegetarischen Gerichten
+30. September 2022,Hinzufügen von Stadtmensa- und Caféteriagerichten
+31. Dezember 2022,Hinzufügen weiterer Statistiken
