@@ -188,7 +188,7 @@ with tab4:
         
 with tab5:
      build_df = pd.read_csv('builds.txt')
-     st.write(build_df.summary())
+     st.write(build_df.describe())
 
 
 
