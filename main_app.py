@@ -187,8 +187,15 @@ with tab4:
         st.metric('Durchschnittliche Zahl der Gerichte', str(round(avg_present,1)).replace('.',','), delta = f'{round(100*(avg_present/avg_past-1),1)} %'.replace('.',','))
         
 with tab5:
-     build_df = pd.read_csv('builds.txt')
-     st.write(build_df.describe())
-
+        build_df = pd.read_csv('builds.txt')
+        clograw_df = pd.read_csv('changelog.txt')
+        clog_list = []
+        for build_nr in build_df['Buildnummer']:
+                clog_string = ''
+                for clog_line in clograw_df[clograw_df['Buildnummer'] = build_nr]['Change']:
+                        clog_string = clog_string + '- ' + clog_line + '\n'
+                clog_list.append(clog_string)
+        clog_df = pd.DataFrame(data={'Buildnummer': build_df['Buildnummer'], 'Datum': build_df['Datum'], 'Änderungen': clog_list})
+        st.table(clog_df)
 
 
