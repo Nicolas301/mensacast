@@ -3,4 +3,3 @@ scikit-learn==1.1.1
 plotly==5.9.0
 spacy==3.4.0
 mlxtend==0.20.0
-spacy-streamlit==1.0.4
