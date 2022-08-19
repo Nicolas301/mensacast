@@ -243,8 +243,9 @@ with tab5:
                 prop_dict = {}
                 nonveg_df = viable_df[viable_df['is_vegetarian'] == 0]['meal']
                 veg_df = viable_df[viable_df['is_vegetarian'] == 1]['meal']
+                st.write(veg_df.head(5))
                 for noun in noun_list:
-                        veg_coun = veg_df[noun in veg_df].shape[0]
+                        veg_count = veg_df[noun in veg_df].shape[0]
                         nonveg_prop = nonveg_df[noun in nonveg_df].shape[0]/nonveg_df.shape[0]
                         veg_prop = veg_count/veg_df.shape[0]
                         prop_dict[noun] = (nonveg_prop, veg_prop)
