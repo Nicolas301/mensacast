@@ -237,6 +237,19 @@ with tab5:
                                 if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
                                         noun_list.append(token.text)
                 noun_list = list(set(noun_list))
-                st.write('Geplantes Feature - Erkennung vegetarischer Gerichte:')
-                st.write(noun_list)
+                st.write('Experimentelles Feature geladen: Erkennung vegetarischer Gerichte.')
+                st.write('Mögliche fleischenthaltende Komponenten (experimentell):')
                 
+                prop_dict = {}
+                nonveg_df = viable_df[viable_df['is_vegetarian'] == 0]['meal']
+                veg_df = viable_df[viable_df['is_vegetarian'] == 1]['meal']
+                for noun in noun_list:
+                        nonveg_prop = nonveg_df[noun in nonveg_df].shape[0]/nonveg_df.shape[0]
+                        veg_prop = veg_df[noun in veg_df].shape[0]/veg_df.shape[0]
+                        prop_dict[noun] = (nonveg_prop, veg_prop)
+                        if(nonveg_prop >= 1.5*veg_prop):
+                                st.write(noun)
+                        
+                        
+                        
+                        
