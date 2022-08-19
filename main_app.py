@@ -247,7 +247,7 @@ with tab5:
                 for noun in noun_list:
                         veg_count = veg_df.loc[[noun in veg_meal for veg_meal in veg_df]].shape[0]
                         veg_prop = veg_count/veg_df.shape[0]
-                        prop_dict[noun] = (nonveg_prop, veg_prop)
+                        prop_dict[noun] = (nonveg_count, veg_count)
                         if veg_prop == 0 and nonveg_prop >= 5:
                                 st.write(noun+' -- '+str(veg_count)+' -- '+str(nonveg_count))
                                 nonveg_component_list.append(noun)
