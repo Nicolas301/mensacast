@@ -244,8 +244,8 @@ with tab5:
                 nonveg_df = viable_df[viable_df['is_vegetarian'] == 0]['meal']
                 veg_df = viable_df[viable_df['is_vegetarian'] == 1]['meal']
                 for noun in noun_list:
-                        veg_count = veg_df.loc[noun in veg_df].shape[0]
-                        nonveg_prop = nonveg_df.loc[noun in nonveg_df].shape[0]/nonveg_df.shape[0]
+                        veg_count = veg_df.loc[[noun in veg_meal for veg_meal in veg_df]].shape[0]
+                        nonveg_prop = nonveg_df.loc[[noun in nonveg_meal for nonveg_meal in nonveg_df]].shape[0]/nonveg_df.shape[0]
                         veg_prop = veg_count/veg_df.shape[0]
                         prop_dict[noun] = (nonveg_prop, veg_prop)
                         if (nonveg_prop >= 1.5*veg_prop) and (veg_count >= 5):
