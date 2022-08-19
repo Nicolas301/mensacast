@@ -248,7 +248,7 @@ with tab5:
                         nonveg_prop = nonveg_df.loc[[noun in nonveg_meal for nonveg_meal in nonveg_df]].shape[0]/nonveg_df.shape[0]
                         veg_prop = veg_count/veg_df.shape[0]
                         prop_dict[noun] = (nonveg_prop, veg_prop)
-                        if (nonveg_prop >= veg_prop) and (veg_count >= 3):
+                        if (nonveg_prop >= veg_prop) and (veg_count >= 1):
                                 st.write(noun+' -- '+str(veg_prop)+' -- '+str(nonveg_prop))
                         
                         
