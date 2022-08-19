@@ -249,7 +249,7 @@ with tab5:
                         veg_prop = veg_count/veg_df.shape[0]
                         prop_dict[noun] = (nonveg_prop, veg_prop)
                         if (nonveg_prop >= 1.5*veg_prop) and (veg_count >= 2):
-                                st.write(noun+' -- '+veg_prop+' -- '+nonveg_prop)
+                                st.write(noun+' -- '+str(veg_prop)+' -- '+str(nonveg_prop))
                         
                         
                         
