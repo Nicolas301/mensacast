@@ -62,7 +62,7 @@ number_past_days, number_present_days = past_day_numbers(effective_day())
 
 st.header('MensaCast')
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y")}')
-st.caption('Build 3, Stand: 18. August 2022')
+st.caption('Build 4, Stand: 26. August 2022')
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken', 'Changelog'])
 
