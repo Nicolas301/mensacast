@@ -4,3 +4,4 @@ Buildnummer,Change
 2,Kleine grammatikalische Änderungen
 3,Changelog-Tab hinzugefügt
 3,"Experimental"-Bereich im Changelog-Tab hinzugefügt
+4,Laufzeitverbesserungen in der Komponentenanalyse
