@@ -20,6 +20,7 @@ def highlight_vegetarian(df, vegetarian_column):
         return ['background-color: #004400' if vegetarian_column.iloc[x] else 'background-color: #440000' for x in np.arange(df.shape[0])]
 
 # Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
+@st.cache
 def slice_time(data, from_including, to_excluding=None):
         if to_excluding is not None:
                 return data.loc[[(pd.to_datetime(date) >= pd.to_datetime(from_including)) & (pd.to_datetime(date) < pd.to_datetime(to_excluding)) for date in data['date']]]
@@ -76,6 +77,7 @@ with tab1:
         selected_weekday = st.selectbox('Wochentag', weekday_labels,index=min(today_index,4))
         highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False, help = 'In einigen Fällen werden Gerichte vom Studierendenwerk fälschlich als vegetarisch oder nicht-vegetarisch eingeordnet. Dies ist kein Fehler dieser Webseite.')
         start_of_day = pd.to_datetime(monday())
+        # Build 4: df global auf cached df_current_week einschränken und unten df_current_week statt df indexen
         if selected_weekday == weekday_labels[1]:
                 start_of_day = pd.to_datetime(monday()) + np.timedelta64(1,'D')
         elif selected_weekday == weekday_labels[2]:
