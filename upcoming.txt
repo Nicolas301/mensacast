@@ -1,4 +1,5 @@
 Geplante Deadline,Änderung
+5. September 2022,Erweiterte Komponentensuche
 15. September 2022,Laufzeitoptimierungen im derzeitigen Skript
 15. September 2022,Eigene Erkennung vegetarischer Gerichte
 20. September 2022,Statistiken zu vergangenen vegetarischen Gerichten
