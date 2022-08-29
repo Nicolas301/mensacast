@@ -3134,22 +3134,42 @@ id,date,meal,price,is_vegetarian
 83001,2022-08-19,"MensaInternational: Süßkartoffeleintopf aus dem Kongo, dazu ein Weizenbrötchen",2.4,1
 83002,2022-08-19,Mediterrane Hähnchenfpanne mit Mandelromanesco und Reis,2.4,0
 83003,2022-08-22,Auberginen im Haferflockenmantel mit Tomatensoße und Gemüse-Bulgur,1.85,1
-83004,2022-08-22,Pfefferfleischwürfel vom Schweinekamm auf Spätzle,2.10,0
-83005,2022-08-22,2 Rote-Bete-Puffer mit Bärlauchsoße und Kartoffel-Kürbispüree,2.10,1
-83006,2022-08-22,"Hähnchenbrust ""Milano"" auf feurigem Ratatouille-Gemüse, Pommes frites",3.10,0
-83007,2022-08-23,"Orientalische Linsen-Kürbis-Birnen-Suppe, dazu ein Mehrkornbrötchen",1.60,1
-83008,2022-08-23,Seelachsfilet in Knusperpanade auf Senfsoße mit Buttererbsen und Petersilienkartoffeln,3.10,0
-83009,2022-08-23,"Pennenudeln mit Cherrytomaten, Rucola, Hirtenkäse und Pinienkernen",2.40,1
-83010,2022-08-23,"Putensteak mit Rahm-Champignons, buntem Gemüse und Pommes frites",3.10,0
-83011,2022-08-24,MensaInternational-Frankreich: Pasta mit Thunfisch-Zucchinisauce,2.40,0
-83012,2022-08-24,"Hackfleischröllchen mit Quarkdip, Europagemüse und Pommes Crinkle",2.10,0
-83013,2022-08-24,Tofusteak mit Spinat-Tomaten-Kokos-Gemüse und Kurkumareis,1.60,1
-83014,2022-08-24,Feuriges Gemüse-Rindfleisch-Curry mit Mienudeln,3.60,0
+83004,2022-08-22,Pfefferfleischwürfel vom Schweinekamm auf Spätzle,2.1,0
+83005,2022-08-22,2 Rote-Bete-Puffer mit Bärlauchsoße und Kartoffel-Kürbispüree,2.1,1
+83006,2022-08-22,"Hähnchenbrust ""Milano"" auf feurigem Ratatouille-Gemüse, Pommes frites",3.1,0
+83007,2022-08-23,"Orientalische Linsen-Kürbis-Birnen-Suppe, dazu ein Mehrkornbrötchen",1.6,1
+83008,2022-08-23,Seelachsfilet in Knusperpanade auf Senfsoße mit Buttererbsen und Petersilienkartoffeln,3.1,0
+83009,2022-08-23,"Pennenudeln mit Cherrytomaten, Rucola, Hirtenkäse und Pinienkernen",2.4,1
+83010,2022-08-23,"Putensteak mit Rahm-Champignons, buntem Gemüse und Pommes frites",3.1,0
+83011,2022-08-24,MensaInternational-Frankreich: Pasta mit Thunfisch-Zucchinisauce,2.4,0
+83012,2022-08-24,"Hackfleischröllchen mit Quarkdip, Europagemüse und Pommes Crinkle",2.1,0
+83013,2022-08-24,Tofusteak mit Spinat-Tomaten-Kokos-Gemüse und Kurkumareis,1.6,1
+83014,2022-08-24,Feuriges Gemüse-Rindfleisch-Curry mit Mienudeln,3.6,0
 83015,2022-08-25,Wok-Gemüse-Reis mit Mungobohnen-Sprossen und gerösteten Cashew-Kernen,1.85,1
 83016,2022-08-25,Schweine-Leberragout in Rotweinsoße an Kartoffelröstis und Krautsalat,1.85,0
-83017,2022-08-25,"Camembert gebacken mit Tomatensauce oder Preiselbeeren an Pommes frites, dazu Eichblattsalat",3.10,1
-83018,2022-08-25,MensaInternational-Indien: Chicken-Curry mit Reis,3.10,0
-83019,2022-08-26,Sojabolognese mit Nudeln,1.60,1
+83017,2022-08-25,"Camembert gebacken mit Tomatensauce oder Preiselbeeren an Pommes frites, dazu Eichblattsalat",3.1,1
+83018,2022-08-25,MensaInternational-Indien: Chicken-Curry mit Reis,3.1,0
+83019,2022-08-26,Sojabolognese mit Nudeln,1.6,1
 83020,2022-08-26,"Grüner Bohneneintopf mit Kassler, dazu 1 Mehrkornbrötchen",1.85,0
-83021,2022-08-26,Gebratener Halloumi mit Ajvarcreme und griechischen Nudelsalat,3.60,1
-83022,2022-08-26,Thailändisches Putengeschnetzeltes mit Jasmin-Duftreis,3.10,0
+83021,2022-08-26,Gebratener Halloumi mit Ajvarcreme und griechischen Nudelsalat,3.6,1
+83022,2022-08-26,Thailändisches Putengeschnetzeltes mit Jasmin-Duftreis,3.1,0
+83023,2022-08-29,Kichererbsen-Ananas-Spinat-Curry mit indischen Kartoffeln,1.60,1
+83024,2022-08-29,Gebratene Schupfnudeln mit Pesto auf Kassler-Sauerkraut,2.40,0
+83025,2022-08-29,"MensaInternational-Indien: Blumenkohl mit Paprika und Erbsen, dazu Reis mit Kreuzkümmel",1.60,1
+83026,2022-08-29,"Tintenfischringe mit Knoblauch-Dip, Pommes frites und buntem Salat",3.10,0
+83027,2022-08-30,"Milchreis mit Apfelmus, Zucker und Zimt",1.60,1
+83028,2022-08-30,MensaInternational-Syrien: Gegrilltes Seelachsfilet mit Petersilien-Bulgur-Salat,3.60,0
+83029,2022-08-30,Tomaten-Wurzelgemüse mit Couscous und einem Erdbeer-Soja-Shake,1.60,1
+83030,2022-08-30,"Hähnchenbrust mit Bohnen-Mais-Gemüse in scharfer Barbecuesoße, dazu Kartoffelecken",3.10,0
+83031,2022-08-31,Gabelspaghetti mit feurigem Tomaten-Mango-Belugalinsenragout,1.60,1
+83032,2022-08-31,"Schweinegeschnetzeltes mit grünem Pfeffer, Mandelbrokkoli und Spätzle",2.10,0
+83033,2022-08-31,Bunter Gemüse-Mix mit Schnittlauch-Rahm auf Kartoffelrösti,1.85,1
+83034,2022-08-31,Glasiertes Putensteak mit buntem Gemüse und Pommes frites,3.60,0
+83035,2022-09-01,Süßkartoffel-Kokos-Soja-Curry mit Tomatenbulgur,1.60,1
+83036,2022-09-01,Bunte Bratwurstpfanne mit Gemüse und Pommes Chips,2.70,0
+83037,2022-09-01,"Tortelloni ""Ricotta"" mit Tomatensoße",1.85,1
+83038,2022-09-01,"Rinderhacksteak mit Hirtenkäse, dazu Letschogemüse und Pommes frites",4.10,0
+83039,2022-09-02,Kaiserschmarrn mit Rum-Rosinen und Zwetschgen,2.40,1
+83040,2022-09-02,MensaInternational-Finnland: Kartoffelauflauf mit Schinken,2.40,0
+83041,2022-09-02,Tomaten-Chili-Knoblauch-Spaghetti mit Tofu,1.85,1
+83042,2022-09-02,Hähnchenschnitzel mit BIO- Sommergemüse und Pommes frites,3.10,0
