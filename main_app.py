@@ -19,6 +19,12 @@ def effective_day():
 def highlight_vegetarian(df, vegetarian_column):
         return ['background-color: #004400' if vegetarian_column.iloc[x] else 'background-color: #440000' for x in np.arange(df.shape[0])]
 
+def nonveg_components():
+        return ['Hähnchenbruststreifen','Fleischfrikadelle','Hackfleischpfanne','Schweineleber','Hackfleischröllchen','Schollenfilet',
+               'Seelachsfilet','Fisch','Hähnchenbruststreak','Hähnchenkeule','Wurstgulasch','Schwein','Steakhouse','Rostbrätel','Steak',
+               'Putengyros','Jagdwurst','Hühnerfrikassee','Schinken','Pfefferfleischwürfel','Puten-Leberragout','Hähnchenbrustfilet',
+               'Rindfleisch','Schweinekamm','Schweinefleisch','Shrimps','Bauernfrühstück','Hähnchenbrust','']
+
 # Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
 @st.cache
 def slice_time(data, from_including, to_excluding=None):
@@ -242,6 +248,7 @@ with tab5:
                 st.write('Experimentelles Feature geladen: Erkennung vegetarischer Gerichte.')
                 st.write('Mögliche fleischenthaltende Komponenten (experimentell):')
                 
+                nonveg_output = ""
                 prop_dict = {}
                 nonveg_df = viable_df[viable_df['is_vegetarian'] == 0]['meal']
                 veg_df = viable_df[viable_df['is_vegetarian'] == 1]['meal']
@@ -251,8 +258,8 @@ with tab5:
                         nonveg_count = nonveg_df.loc[[noun in nonveg_meal for nonveg_meal in nonveg_df]].shape[0]
                         prop_dict[noun] = (nonveg_count, veg_count)
                         if veg_count == 0 and nonveg_count >= 5:
-                                st.write(noun)
+                                nonveg_output = nonveg_output + "'" + noun + "',"
                                 nonveg_component_list.append(noun)
-                        
+               st.write(nonveg_output)         
                         
                         
