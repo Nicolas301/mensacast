@@ -24,12 +24,12 @@ def custom_veg_check(meal_text):
                                 return True
         return False
 
-def highlight_vegetarian(meal_frame, vegetarian_column):
+def highlight_vegetarian(df, vegetarian_column, meal_column):
         color_list = []
-        for i in np.arange(meal_frame.shape[0]):
-                if vegetarian_column.iloc[i] and custom_veg_check(meal_frame['Essen'].iloc[i]):
+        for i in np.arange(df.shape[0]):
+                if vegetarian_column.iloc[i] and custom_veg_check(meal_column.iloc[i]):
                         color_list.append('background-color: #004400')
-                elif not(vegetarian_column.iloc[i] or custom_veg_check(meal_frame['Essen'].iloc[i])):
+                elif not(vegetarian_column.iloc[i] or custom_veg_check(meal_column.iloc[i])):
                         color_list.append('background-color: #440000')
                 else:
                         color_list.append('background-color: #444400')
@@ -110,9 +110,10 @@ with tab1:
         df_current_day.set_index(np.arange(1,df_current_day.shape[0]+1),inplace=True)
         df_current_day.sort_values(by='Preis', inplace = True)
         vegetarian_column = df_current_day['Vegetarisch']
+        meal_column = df_current_day['Essen']
         df_style = df_current_day.style.format({'Preis': '{:.2f}€'}, decimal = ',')
         if highlight_veg:
-                df_style = df_style.apply(highlight_vegetarian, vegetarian_column = vegetarian_column, axis = 0)
+                df_style = df_style.apply(highlight_vegetarian, vegetarian_column = vegetarian_column, meal_column = meal_column, axis = 0)
         df_current_day.drop(columns=['Vegetarisch'], inplace=True)
         st.table(df_style)
 
