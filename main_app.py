@@ -17,6 +17,7 @@ def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
 def custom_veg_check(meal_text):
+        nlp = spacy.load('de_core_news_sm')
         doc = nlp(meal_text)
         for token in doc:
                 if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
