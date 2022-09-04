@@ -22,8 +22,8 @@ def custom_veg_check(meal_text):
         for token in doc:
                 if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
                         if token.text in nonveg_components():
-                                return True
-        return False
+                                return False
+        return True
 
 def highlight_vegetarian(df, vegetarian_column, meal_column):
         color_list = []
