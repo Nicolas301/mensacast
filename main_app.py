@@ -27,9 +27,9 @@ def word_splitter(text):
         word_list = []
         text_copy = text + ' '
         while ' ' in text_copy:
-                single_word = text_copy[:index(' ')]
+                single_word = text_copy[:(index(' '))]
                 word_list.append(single_word)
-                text_copy = text_copy[index(' ')+1:]
+                text_copy = text_copy[(index(' ')+1):]
         return word_list
                 
 
