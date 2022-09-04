@@ -16,14 +16,27 @@ def monday():
 def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
-def highlight_vegetarian(df, vegetarian_column):
-        return ['background-color: #004400' if vegetarian_column.iloc[x] else 'background-color: #440000' for x in np.arange(df.shape[0])]
+def custom_veg_check(meal_text):
+        doc = nlp(meal_text)
+        for token in doc:
+                if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
+                        if token.text in nonveg_components():
+                                return True
+        return False
+
+def highlight_vegetarian(meal_frame, vegetarian_column):
+        color_list = []
+        for i in np.arange(df.shape[0]):
+                if vegetarian_column.iloc[i] and custom_veg_check(meal_frame['meal'].iloc[i]:
+                        color_list.append('background-color: #004400')
+                elif not(vegetarian_column.iloc[i] or custom_veg_check(meal_frame['meal'].iloc[i]):
+                        color_list.append('background-color: #440000')
+                else:
+                        color_list.append('background-color: #444400')
+         return color_list
 
 def nonveg_components():
-        return ['Hähnchenbruststreifen','Fleischfrikadelle','Hackfleischpfanne','Schweineleber','Hackfleischröllchen','Schollenfilet',
-               'Seelachsfilet','Fisch','Hähnchenbruststreak','Hähnchenkeule','Wurstgulasch','Schwein','Steakhouse','Rostbrätel','Steak',
-               'Putengyros','Jagdwurst','Hühnerfrikassee','Schinken','Pfefferfleischwürfel','Puten-Leberragout','Hähnchenbrustfilet',
-               'Rindfleisch','Schweinekamm','Schweinefleisch','Shrimps','Bauernfrühstück','Hähnchenbrust','']
+        return ['Kartoffelbällchen','Hähnchenbruststreifen','Salatbeilage','Hartkäse','Reibekäse','Bohnen-Mais-Gemüse','Kartoffelecken','Broccoli-Karottengemüse','Wellen-Bandnudeln','Schupfnudeln','Fleischfrikadelle','Hackfleischpfanne','Schweineleber','Basilikumpesto','Hackfleischröllchen','Semmelknödel','Gegrilltes','Schollenfilet','Balkangemüse','Jasminreis','Texasstyle','Jäger','Dijon-Senfsauce','Semmelknödeln','Stampfkartoffeln','Crossies','Stroganoff','Kartoffelsalat','Gnocchipfanne','Seelachsfilet','Fisch','Mischgemüse','Hähnchenbruststeak','Wurstgulasch','Hähnchenkeule','Paprika-Tomaten-Apfelgemüse','Schwein','Spirelli','Kräutereihülle','Steakhouse','Brühgurke','Apfelrotkohl','Bohnengemüse','Twister','Rostbrätel','Senf-Dillsoße','Steak','Kräuter-Käse','Hausfrauen','Rahm-Champignons','Putengyros','Buttererbsen','Kartoffel-Radicchio-Salat','Jagdwurst','Tomaten-Weinbrand-Rahm','Lauch-Suppe','Hühnerfrikassee','Schinken','Pfefferfleischwürfel','Pesto','Puten-Leberragout','Gurken-Senfsoße','Hähnchenbrustfilet','Rindfleisch','Buttererbsengemüse','Schweinekamm','Schweinefleisch','Mais','Lugano','Senf-Sahnesoße','Shrimps','Bauernfrühstück','Ingwerreis','Kokos-Curry-Soße','Weißkrautsalat','Gemüseallerlei','Hähnchenbrust','Brokkoligemüse','Hähnchenschnitzel','Brathering','Wedges','Paprika-Maisgemüse','Blumenkohlgemüse','Letschogemüse','Wurst','Kräuter-Käsesoße','Kräuterpanade','Sommergemüse','Pfeffer','con','Jasmin-Duftreis','Bambuss','Tomaten-Basilikumsoße','Wellenbandnudeln','Champignonrahmsoße','Käsehackbraten','Knusperpanade','Schwarzwurzel-Gemüse','Gefüllte','Mandelbrokkoli','Möhrengemüse','Bratwurst','Radi-Nudeln','Schweinesteak','Rotweinsoße','Heringsfilet','Tomate-Mozzarella','Kartoffelspalten','Chicken','Zwiebelringen','Kroketten','Seelachs','Putenbruststreifen','Kassler','Bandnudeln','Altengönna','Tomaten-Rucolasalat','Rinderhacksteak','Rindermett','Putenschnitzel','Hackfleisch','Farmergemüse','Fingermöhren','Chilibohnen','Schweinegeschnetzeltes','Pute','Rostbraten','Zwiebel-Senfkruste','Rucolasoße','Putengeschnetzeltes','Barbecuesoße','Rindersauerbraten','Tomaten-Schinkenragout','Champignon-Kräuter-','Ratsherrengeschnetzeltes','Thunfisch-Zucchinisauce','Rindfleischpfanne','Pfannengyros','Kartoffelauflauf','four','Crinkle','Zuckerschoten','Tomaten-Zucchini-Gemüse','Weißkohlsalat','Kardamom','Soljanka','Butterbohnen','Putensteak','Schweineschnitzel','Gnocchi','Kassler-Sauerkraut','Sauerkraut','Allerlei','Spiralnudeln','Kartoffelröstis','Bio-Spirelli','Eisbergsalat','Geflügelsoße','Kapernsoße','Mandel-Kartoffelbällchen','Klopse','Mozzarellasticks','Kaisergemüse','Salsa-Dip','Betesalat','Rinderschmorbraten','Kräuterzwiebeln','Kräuter-Rahmsoße','Strindberg','Bolognesesoße','Chicken-Curry','Pestonudeln','Reispfanne']
 
 # Gibt in einem Essensdatenframe die Gerichte zurück, die zeitlich im Intervall [from_including, to_excluding) liegen
 @st.cache
