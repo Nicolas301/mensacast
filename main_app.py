@@ -260,6 +260,6 @@ with tab5:
                         if veg_count == 0 and nonveg_count >= 5:
                                 nonveg_output = nonveg_output + "'" + noun + "',"
                                 nonveg_component_list.append(noun)
-               st.write(nonveg_output)
+                st.write(nonveg_output)
                         
                         
