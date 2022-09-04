@@ -27,9 +27,9 @@ def custom_veg_check(meal_text):
 def highlight_vegetarian(meal_frame, vegetarian_column):
         color_list = []
         for i in np.arange(df.shape[0]):
-                if vegetarian_column.iloc[i] and custom_veg_check(meal_frame['meal'].iloc[i]:
+                if vegetarian_column.iloc[i] and custom_veg_check(meal_frame['meal'].iloc[i]):
                         color_list.append('background-color: #004400')
-                elif not(vegetarian_column.iloc[i] or custom_veg_check(meal_frame['meal'].iloc[i]):
+                elif not(vegetarian_column.iloc[i] or custom_veg_check(meal_frame['meal'].iloc[i])):
                         color_list.append('background-color: #440000')
                 else:
                         color_list.append('background-color: #444400')
