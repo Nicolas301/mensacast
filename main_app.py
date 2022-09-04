@@ -17,13 +17,21 @@ def effective_day():
         return (pd.Timestamp.today(tz='Europe/Berlin') - pd.DateOffset(hours=6, minutes=30)).date()
 
 def custom_veg_check(meal_text):
-        nlp = spacy.load('de_core_news_sm')
-        doc = nlp(meal_text)
-        for token in doc:
-                if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
-                        if token.text in nonveg_components():
-                                return False
+        word_list = word_splitter(meal_text)
+        for word in word_list:
+                if word in nonveg_components():
+                        return False
         return True
+
+def word_splitter(text):
+        word_list = []
+        text_copy = text + ' '
+        while ' ' in text_copy:
+                single_word = text_copy[:index(' ')]
+                word_list.append(single_word)
+                text_copy = text_copy[index(' ')+1:]
+        return word_list
+                
 
 def highlight_vegetarian(df, vegetarian_column, meal_column):
         color_list = []
@@ -33,7 +41,7 @@ def highlight_vegetarian(df, vegetarian_column, meal_column):
                 elif not(vegetarian_column.iloc[i] or custom_veg_check(meal_column.iloc[i])):
                         color_list.append('background-color: #440000')
                 else:
-                        color_list.append('background-color: #444400')
+                        color_list.append('background-color: #440044')
         return color_list
 
 def nonveg_components():
@@ -82,7 +90,7 @@ number_past_days, number_present_days = past_day_numbers(effective_day())
 
 st.header('MensaCast')
 st.write(f'Datenstand: {fetch_date.strftime("%d.%m.%Y")}')
-st.caption('Build 4, Stand: 26. August 2022')
+st.caption('Build 5, Stand: 4. September 2022')
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(['Speiseplan', 'Durchschnittspreise', 'Komponentensuche', 'Statistiken', 'Changelog'])
 
@@ -95,7 +103,7 @@ with tab1:
         weekday_labels.append(f'Donnerstag, {(pd.to_datetime(monday()) + np.timedelta64(3,"D")).strftime("%d.%m.%Y")}')
         weekday_labels.append(f'Freitag, {(pd.to_datetime(monday()) + np.timedelta64(4,"D")).strftime("%d.%m.%Y")}')
         selected_weekday = st.selectbox('Wochentag', weekday_labels,index=min(today_index,4))
-        highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False, help = 'In einigen Fällen werden Gerichte vom Studierendenwerk fälschlich als vegetarisch oder nicht-vegetarisch eingeordnet. Dies ist kein Fehler dieser Webseite.')
+        highlight_veg = st.checkbox('Vegetarische Gerichte hervorheben', value = False, help = 'In einigen Fällen werden Gerichte vom Studierendenwerk fälschlich als vegetarisch oder nicht-vegetarisch eingeordnet. Sollte die seiteneigene Erkennung den offiziellen Daten widersprechen, werden die entsprechenden Gerichte lila eingefärbt.')
         start_of_day = pd.to_datetime(monday())
         # Build 4: df global auf cached df_current_week einschränken und unten df_current_week statt df indexen
         if selected_weekday == weekday_labels[1]:
