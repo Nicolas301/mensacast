@@ -5,3 +5,4 @@ Buildnummer,Change
 3,Changelog-Tab hinzugefügt
 3,"Experimental"-Bereich im Changelog-Tab hinzugefügt
 4,Laufzeitverbesserungen in der Komponentensuche
+5,Eigene (noch experimentelle) Erkennung vegetarischer Gerichte im Speiseplan
