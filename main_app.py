@@ -264,6 +264,6 @@ with tab5:
                         veg_1 = viable_df['is_vegetarian'].iloc[i]
                         veg_2 = custom_veg_check(viable_df['meal'].iloc[i])
                         if veg_1 != veg_2:
-                                print(viable_df['meal'].iloc[i])
+                                st.write(viable_df['meal'].iloc[i])
 
 
