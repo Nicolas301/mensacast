@@ -259,14 +259,11 @@ with tab5:
                 old_df = slice_time(df, pd.Timestamp(year=1970,month=1,day=1), pd.Timestamp(year=2021,month=3,day=30))
                 new_df = slice_time(df, pd.Timestamp(year=2022,month=7,day=2))
                 viable_df = pd.concat([old_df,new_df])
-                num_meals = 0
-                num_correct_meals = 0
+                st.write('Falsch klassifizierte Gerichte:')
                 for i in range(viable_df.shape[0]):
                         veg_1 = viable_df['is_vegetarian'].iloc[i]
                         veg_2 = custom_veg_check(viable_df['meal'].iloc[i])
-                        num_meals += 1
-                        num_correct_meals += (veg_1 == veg_2)
-                st.write(f'Zahl der Essen in Testdatensatz: {num_meals}')
-                st.write(f'Zahl der korrekt klassifizierten Essen: {num_correct_meals}')
+                        if veg_1 != veg_2:
+                                print(viable_df['meal'].iloc[i])
 
 
