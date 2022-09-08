@@ -256,33 +256,17 @@ with tab5:
                 # Bestimmung der Häufigkeit der Substantive unter allen vegetarischen und nicht-vegetarischen Gerichten
                 # Falls Komponente in nicht-vegetarischen Gerichten anteilig viel häufiger auftaucht als in vegetarischen: Flaggen als nicht-vegetarisch
                 # Essen, das keine als nicht-vegetarisch geflaggte Komponenten enthält: ist vegetarisch
-                nlp = spacy.load('de_core_news_sm')
-                noun_list = []
                 old_df = slice_time(df, pd.Timestamp(year=1970,month=1,day=1), pd.Timestamp(year=2021,month=3,day=30))
                 new_df = slice_time(df, pd.Timestamp(year=2022,month=7,day=2))
                 viable_df = pd.concat([old_df,new_df])
-                meal_series = viable_df['meal']
-                for meal in meal_series:
-                        doc = nlp(meal)
-                        for token in doc:
-                                if token.pos_ == 'NOUN' or token.pos_ == 'PROPN':
-                                        noun_list.append(token.text)
-                noun_list = list(set(noun_list))
-                st.write('Experimentelles Feature geladen: Erkennung vegetarischer Gerichte.')
-                st.write('Mögliche fleischenthaltende Komponenten (experimentell):')
-                
-                nonveg_output = ""
-                prop_dict = {}
-                nonveg_df = viable_df[viable_df['is_vegetarian'] == 0]['meal']
-                veg_df = viable_df[viable_df['is_vegetarian'] == 1]['meal']
-                nonveg_component_list = []
-                for noun in noun_list:
-                        veg_count = veg_df.loc[[noun in veg_meal for veg_meal in veg_df]].shape[0]
-                        nonveg_count = nonveg_df.loc[[noun in nonveg_meal for nonveg_meal in nonveg_df]].shape[0]
-                        prop_dict[noun] = (nonveg_count, veg_count)
-                        if veg_count == 0 and nonveg_count >= 5:
-                                nonveg_output = nonveg_output + "'" + noun + "',"
-                                nonveg_component_list.append(noun)
-                st.write(nonveg_output)
-                        
-                        
+                num_meals = 0
+                num_correct_meals = 0
+                for i in range(viable_df.shape[0]):
+                        veg_1 = viable_df['is_vegetarian'].iloc[i]
+                        veg_2 = custom_veg_check(viable_df['meal'].iloc[i])
+                        num_meals += 1
+                        num_correct_meals += (veg_1 == veg_2)
+                st.write(f'Zahl der Essen in Testdatensatz: {num_meals}')
+                st.write(f'Zahl der korrekt klassifizierten Essen: {num_correct_meals}')
+
+
