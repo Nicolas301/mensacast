@@ -3173,23 +3173,44 @@ id,date,meal,price,is_vegetarian
 83040,2022-09-02,MensaInternational-Finnland: Kartoffelauflauf mit Schinken,2.4,0
 83041,2022-09-02,Tomaten-Chili-Knoblauch-Spaghetti mit Tofu,1.85,1
 83042,2022-09-02,Hähnchenschnitzel mit BIO- Sommergemüse und Pommes frites,3.1,0
-83043,2022-09-05,MensaInternational-Türkei: Rote Linsensuppe mit Fladenbrot,1.60,1
-83044,2022-09-05,Spirelli mit Bolognesesoße und Reibekäse,2.70,0
-83045,2022-09-05,Gemüse-Kartoffelpfanne mit Soja-Kräuter-Dip,2.10,1
-83046,2022-09-05,"Pikante Hähnchenbrust mit Tomaten-Joghurt-Dip, dazu bunte Karotten und Risoleekartoffeln",3.10,0
-83047,2022-09-06,Süßkartoffelcurry mit Kichererbsen und Blattspinat,1.60,1
-83048,2022-09-06,Chili con Carne mit Kartoffel Wedges,3.10,0
-83049,2022-09-06,Waldpilzragout mit Lauchzwiebeln und Semmelknödeln,2.40,1
-83050,2022-09-06,"Schweinesteak ""Lugano"" mit Tomaten-Schinkenragout gratiniert, Buttererbsen und Crinkle Pommes",3.60,0
-83051,2022-09-07,"Toskanische-Nudelpfanne mit Zucchini, Paprika und Aubergine",1.60,1
-83052,2022-09-07,"Seelachsfilet in Ciabattapanade auf Weißweinsoße, dazu Romanescoröschen und Kurkumareis",3.60,0
-83053,2022-09-07,"Tomaten-Kräuterrührei mit Bratkartoffeln, dazu Mischsalat",2.40,1
-83054,2022-09-07,MensaInternational-Kolumbien: Arroz con Pollo,2.40,0
+83043,2022-09-05,MensaInternational-Türkei: Rote Linsensuppe mit Fladenbrot,1.6,1
+83044,2022-09-05,Spirelli mit Bolognesesoße und Reibekäse,2.7,0
+83045,2022-09-05,Gemüse-Kartoffelpfanne mit Soja-Kräuter-Dip,2.1,1
+83046,2022-09-05,"Pikante Hähnchenbrust mit Tomaten-Joghurt-Dip, dazu bunte Karotten und Risoleekartoffeln",3.1,0
+83047,2022-09-06,Süßkartoffelcurry mit Kichererbsen und Blattspinat,1.6,1
+83048,2022-09-06,Chili con Carne mit Kartoffel Wedges,3.1,0
+83049,2022-09-06,Waldpilzragout mit Lauchzwiebeln und Semmelknödeln,2.4,1
+83050,2022-09-06,"Schweinesteak ""Lugano"" mit Tomaten-Schinkenragout gratiniert, Buttererbsen und Crinkle Pommes",3.6,0
+83051,2022-09-07,"Toskanische-Nudelpfanne mit Zucchini, Paprika und Aubergine",1.6,1
+83052,2022-09-07,"Seelachsfilet in Ciabattapanade auf Weißweinsoße, dazu Romanescoröschen und Kurkumareis",3.6,0
+83053,2022-09-07,"Tomaten-Kräuterrührei mit Bratkartoffeln, dazu Mischsalat",2.4,1
+83054,2022-09-07,MensaInternational-Kolumbien: Arroz con Pollo,2.4,0
 83055,2022-09-08,Steckrüben-Bohnen-Paprika-Curry mit Chilikartoffeln,1.85,1
-83056,2022-09-08,"Rostbrätel ""Thüringer Art"" mit Kräuterzwiebeln und hausgemachtem Kartoffelsalat",3.10,0
-83057,2022-09-08,Mediterranes Sojageschnetzeltes mit Reiskorn-Nudeln,1.60,1
-83058,2022-09-08,Rindersauerbraten mit Apfelrotkohl und Klößen,4.10,0
-83059,2022-09-09,MensaInternational-Kolumbien: Linsen-Reis-Suppe mit zwei gekochten Eiern,1.60,1
-83060,2022-09-09,Jagdwurstschnitzel mit Tomatensoße und Bio-Spirelli,2.10,0
+83056,2022-09-08,"Rostbrätel ""Thüringer Art"" mit Kräuterzwiebeln und hausgemachtem Kartoffelsalat",3.1,0
+83057,2022-09-08,Mediterranes Sojageschnetzeltes mit Reiskorn-Nudeln,1.6,1
+83058,2022-09-08,Rindersauerbraten mit Apfelrotkohl und Klößen,4.1,0
+83059,2022-09-09,MensaInternational-Kolumbien: Linsen-Reis-Suppe mit zwei gekochten Eiern,1.6,1
+83060,2022-09-09,Jagdwurstschnitzel mit Tomatensoße und Bio-Spirelli,2.1,0
 83061,2022-09-09,Gemüsepaella mit Vollkornreis und Walnüssen,1.85,1
-83062,2022-09-09,Putenschnitzel mit Paprika-Maisgemüse und Pommes frites,3.10,0
+83062,2022-09-09,Putenschnitzel mit Paprika-Maisgemüse und Pommes frites,3.1,0
+83063,2022-09-12,MensaInternational Ägypten: Okraschoten in Tomatensauce mit Reis,1.60,1
+83064,2022-09-12,Fleischfrikadelle mit Kohlrabigemüse und Petersilienkartoffeln,2.10,0
+83065,2022-09-12,"Blumenkohl-Brokkoli-Gratin mit Gorgonzola, dazu roter Linsensalat",2.40,0
+83066,2022-09-12,"Putensteak in Senf-Sahnesoße, Brokkoligemüse, Pommes Twister",3.60,0
+83067,2022-09-13,Sojasteak mit rotem Zwiebelgemüse und Süßkartoffelpüree,1.85,1
+83068,2022-09-13,Pfannengyros vom Schwein mit Tzatziki und Weißkrautsalat an Pommes frites,2.70,0
+83069,2022-09-13,"Tomatensuppe, 3 Quarkkäulchen mit Sauerkirsch-Gelee, Zimtzucker und Sahnedip",1.85,1
+83070,2022-09-13,Thüringer Bratwurst aus Oberweißbach mit Sauerkraut und Kartoffelpüree,3.10,0
+83071,2022-09-14,"Linseneintopf mit Rauchfleisch und Rotwurst, dazu 1 Brötchen",2.10,0
+83072,2022-09-14,Gemüsepfanne mit Zartweizen und geröstetem Sesam,1.85,1
+83073,2022-09-14,Ungarische Hackfleischpfanne mit Pommes Chips,2.10,0
+83074,2022-09-14,Makkaroni-Tomaten-Brokkoli-Auflauf mit Basilikumsoße,1.60,1
+83075,2022-09-14,Gebratenes Pangasiusfilet auf buntem Sesam-Glasnudelsalat,4.10,0
+83076,2022-09-15,"Mediterrane Nudelpfanne mit Mozzarella, gerne auch als vegane Variante",1.85,1
+83077,2022-09-15,Paniertes Schweineschnitzel mit Schwarzwurzel-Gemüse und Wedges,3.60,0
+83078,2022-09-15,MensaInternational-China: Gebratenes Gemüse mit Reis,2.10,1
+83079,2022-09-15,"Reispfanne ""Spanische Art"" mit Shrimps, Tomaten, Paprika und gegrillter Hähnchenkeule",2.70,0
+83080,2022-09-16,"Mensainternational-Finnland: Spinatsuppe mit gekochtem Ei, dazu 1 Weizenbrötchen",1.60,1
+83081,2022-09-16,Vegan gefüllte Paprikaschote auf Tomatensoße mit Kräuterreis,1.85,1
+83082,2022-09-16,Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauch-Quark und Blattsalat,2.40,1
+83083,2022-09-16,"Schweinesteak ""Strindberg"" mit Zwiebel-Senfkruste, BIO-Sommergemüse und Pommes frites",3.60,0
