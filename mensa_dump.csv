@@ -3214,20 +3214,40 @@ id,date,meal,price,is_vegetarian
 83081,2022-09-16,Vegan gefüllte Paprikaschote auf Tomatensoße mit Kräuterreis,1.85,1
 83082,2022-09-16,Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauch-Quark und Blattsalat,2.4,1
 83083,2022-09-16,"Schweinesteak ""Strindberg"" mit Zwiebel-Senfkruste, BIO-Sommergemüse und Pommes frites",3.6,0
-83084,2022-09-19,Scharfes Kürbisgemüse mit Linsen und Rucola auf Penne Rigate,1.60,1
+83084,2022-09-19,Scharfes Kürbisgemüse mit Linsen und Rucola auf Penne Rigate,1.6,1
 83085,2022-09-19,Vegan gefüllte Paprikaschote auf Tomatensoße mit Kräuterreis,1.85,1
-83086,2022-09-19,"Fleischfrikadelle mit Rahmsoße, Fingermöhren und Petersilienkartoffeln",2.70,0
-83087,2022-09-19,"Kartoffel-Curry mit Mango, Cherrytomaten und Lauch",2.10,1
-83088,2022-09-19,"Hähnchenbrustfilet ""Formaggio"" mit Tomaten-Zucchini-Gemüse und Pommes frites",3.60,0
-83089,2022-09-21,"Spaghetti mit Bolognese von roten Linsen, gerne auch als vegane Variante",1.60,0
-83090,2022-09-21,Gegrillte Hähnchenkeule mit Bulgur-Tomaten-Rucolasalat,2.40,0
-83091,2022-09-21,"Champignonpfanne an Heichelheimer Kartoffelpuffern, Salatgarnitur",3.10,1
-83092,2022-09-21,"Rindfleischpfanne ""Art Stroganoff"" mit Champignons, Gurken und Sauerrahm, dazu Spätzle",3.10,0
+83086,2022-09-19,"Fleischfrikadelle mit Rahmsoße, Fingermöhren und Petersilienkartoffeln",2.7,0
+83087,2022-09-19,"Kartoffel-Curry mit Mango, Cherrytomaten und Lauch",2.1,1
+83088,2022-09-19,"Hähnchenbrustfilet ""Formaggio"" mit Tomaten-Zucchini-Gemüse und Pommes frites",3.6,0
+83089,2022-09-21,"Spaghetti mit Bolognese von roten Linsen, gerne auch als vegane Variante",1.6,0
+83090,2022-09-21,Gegrillte Hähnchenkeule mit Bulgur-Tomaten-Rucolasalat,2.4,0
+83091,2022-09-21,"Champignonpfanne an Heichelheimer Kartoffelpuffern, Salatgarnitur",3.1,1
+83092,2022-09-21,"Rindfleischpfanne ""Art Stroganoff"" mit Champignons, Gurken und Sauerrahm, dazu Spätzle",3.1,0
 83093,2022-09-22,MensaInternational-Indien: Dal mit Reis,1.85,1
-83094,2022-09-22,"Schlemmerfilet ""Italia"" mit Kräutersoße, Grillgemüse und Petersilienkartoffeln",3.60,0
-83095,2022-09-22,Pikante Sesamnudeln mit asiatischem Pfannengemüse,2.10,1
-83096,2022-09-22,"Würzfleisch vom Schwein mit Champignons, Buttererbsen und Pommes frites",2.70,0
-83097,2022-09-23,"Broccoli-Cremesuppe, Germknödel, dazu Soße mit Vanillegeschmack und Heidelbeeren",1.60,1
-83098,2022-09-23,Currybratwurst mit Gewürz-Ketchupdip und Pommes frites,2.70,0
+83094,2022-09-22,"Schlemmerfilet ""Italia"" mit Kräutersoße, Grillgemüse und Petersilienkartoffeln",3.6,0
+83095,2022-09-22,Pikante Sesamnudeln mit asiatischem Pfannengemüse,2.1,1
+83096,2022-09-22,"Würzfleisch vom Schwein mit Champignons, Buttererbsen und Pommes frites",2.7,0
+83097,2022-09-23,"Broccoli-Cremesuppe, Germknödel, dazu Soße mit Vanillegeschmack und Heidelbeeren",1.6,1
+83098,2022-09-23,Currybratwurst mit Gewürz-Ketchupdip und Pommes frites,2.7,0
 83099,2022-09-23,Kichererbsen-Gemüse-Curry mit Basmatireis,1.85,1
-83100,2022-09-23,"Hähnchenbruststreifen in Rucolasoße, dazu Bandnudeln mit Tomaten",2.70,0
+83100,2022-09-23,"Hähnchenbruststreifen in Rucolasoße, dazu Bandnudeln mit Tomaten",2.7,0
+83101,2022-09-26,"Soja-Kokos-Curry mit roter Bete, Champignons, Bohnen und Vollkornreis",1.60,1
+83102,2022-09-26,Schweinefleisch-Krautpfanne mit Petersilienkartoffeln,2.10,0
+83103,2022-09-26,Gebackene Mozzarellasticks auf Tomatensoße und Pestonudeln,2.10,0
+83104,2022-09-26,"Rindfleischpfanne ""Texasstyle"" mit Pommes frites",3.60,0
+83105,2022-09-27,"Kichererbsen-Tomaten-Eintopf, dazu 1 Mehrkornbrötchen",1.60,1
+83106,2022-09-27,MensaInternational-Cina: Hongshao Schweinefleisch mit Gemüsereis,2.70,0
+83107,2022-09-27,"Riesen-Rösti mit Ingwer-Blattspinat, Cocktailtomaten &amp; Hirtenkäse gratiniert",2.10,1
+83108,2022-09-27,Rinderschmorbraten in Rotweinsoße mit Butterbohnen und Semmelknödeln,4.10,0
+83109,2022-09-28,"Königsberger Klopse in Kapernsoße Petersilienkartoffeln, rote Betesalat",2.10,0
+83110,2022-09-28,"Bandnudeln mit Shrimps in Tomaten-Weinbrand-Rahm, dazu Tomaten-Rucolasalat",2.70,0
+83111,2022-09-28,"Wokgemüse ""Thai Chil"" mit frischem Koriander und Mienudeln",1.85,1
+83112,2022-09-28,"Chicken Crossies mit süß- saurer Asia Sauce, buntem Gemüse und Pommes frites",3.60,0
+83113,2022-09-29,Gemüsecurry in scharfer Kokossoße mit Couscous,1.60,1
+83114,2022-09-29,Hühnerfrikassee mit frischen Champignons und Leipziger Allerlei an Kräuterreis,1.85,0
+83115,2022-09-29,"Salatplatte von Frischkostsalaten, Kräuterrührei und Zwiebelbratkartoffeln",3.10,1
+83116,2022-09-29,"Schweinerückensteak mit Kräuterbutter, dazu Erbsen und Pommes frites",3.10,0
+83117,2022-09-30,Frankfurter Wurstgulasch mit Spiralnudeln,1.85,0
+83118,2022-09-30,"Marinierte Heringsfiletstücke nach ""Hausfrauen Art"" mit Petersilienkartoffeln",2.70,0
+83119,2022-09-30,"MensaInternational: Süßkartoffeleintopf aus Kamerun, dazu ein Weizenbrötchen",2.10,1
+83120,2022-09-30,Mediterrane Hähnchenfpanne mit Mandelromanesco und Reis,2.40,0
