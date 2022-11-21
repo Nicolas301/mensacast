@@ -3364,24 +3364,44 @@ id,date,meal,price,is_vegetarian
 83231,2022-11-11,"MensaInternational: Süßkartoffeleintopf aus Kamerun, dazu ein Weizenbrötchen",2.4,1
 83232,2022-11-11,Mediterrane Hähnchenfpanne mit Mandelromanesco und Reis,3.1,0
 83233,2022-11-14,Auberginen im Haferflockenmantel mit Tomatensoße und Gemüse-Bulgur,1.95,1
-83234,2022-11-14,Pfefferfleischwürfel vom Schweinekamm auf Wellen-Bandnudeln,2.70,0
-83235,2022-11-14,2 Rote-Bete-Puffer mit Bärlauchsoße und Kartoffel-Kürbispüree,2.40,1
-83236,2022-11-14,"Hähnchenbrust ""Milano"" auf feurigem Ratatouille-Gemüse, Pommes frites",3.10,0
+83234,2022-11-14,Pfefferfleischwürfel vom Schweinekamm auf Wellen-Bandnudeln,2.7,0
+83235,2022-11-14,2 Rote-Bete-Puffer mit Bärlauchsoße und Kartoffel-Kürbispüree,2.4,1
+83236,2022-11-14,"Hähnchenbrust ""Milano"" auf feurigem Ratatouille-Gemüse, Pommes frites",3.1,0
 83237,2022-11-15,"Orientalische Linsen-Kürbis-Birnen-Suppe, dazu ein Mehrkornbrötchen",1.95,1
-83238,2022-11-15,Seelachsfilet in Knusperpanade auf Senfsoße mit Buttererbsen und Petersilienkartoffeln,3.10,0
+83238,2022-11-15,Seelachsfilet in Knusperpanade auf Senfsoße mit Buttererbsen und Petersilienkartoffeln,3.1,0
 83239,2022-11-15,"Tortellini ""Tricolore"" mit Tomatensoße und Reibekäse",1.95,0
-83240,2022-11-15,"Pennenudeln mit Cherrytomaten, Rucola, Hirtenkäse und Pinienkernen",2.40,1
-83241,2022-11-15,"Holzfällersteak mit Champignon-Kräuter-Zwiebeln, Farmergemüse und Kartoffelspalten",3.60,0
-83242,2022-11-15,Seelachs paniert,1.50,0
-83243,2022-11-16,MensaInternational-Frankreich: Pasta mit Thunfisch-Zucchinisauce,2.70,0
-83244,2022-11-16,"Hackfleischröllchen mit Quarkdip, Europagemüse und Pommes Crinkle",2.70,0
+83240,2022-11-15,"Pennenudeln mit Cherrytomaten, Rucola, Hirtenkäse und Pinienkernen",2.4,1
+83241,2022-11-15,"Holzfällersteak mit Champignon-Kräuter-Zwiebeln, Farmergemüse und Kartoffelspalten",3.6,0
+83242,2022-11-15,Seelachs paniert,1.5,0
+83243,2022-11-16,MensaInternational-Frankreich: Pasta mit Thunfisch-Zucchinisauce,2.7,0
+83244,2022-11-16,"Hackfleischröllchen mit Quarkdip, Europagemüse und Pommes Crinkle",2.7,0
 83245,2022-11-16,Tofusteak mit Spinat-Tomaten-Kokos-Gemüse und Kurkumareis,1.95,1
-83246,2022-11-16,Geschmortes Rindfleisch-Kürbis-Ragout auf Spätzle,3.60,0
+83246,2022-11-16,Geschmortes Rindfleisch-Kürbis-Ragout auf Spätzle,3.6,0
 83247,2022-11-17,Wok-Gemüse-Reis mit Mungobohnen-Sprossen und gerösteten Cashew-Kernen,1.95,1
-83248,2022-11-17,Schweine-Leberragout in Rotweinsoße an Kartoffelröstis und Krautsalat,2.70,0
-83249,2022-11-17,"Camembert gebacken mit Tomatensauce oder Preiselbeeren an Pommes frites, dazu Eichblattsalat",3.10,1
-83250,2022-11-17,MensaInternational-Kolumbien: Hähnchengeschnetzeltes mit Reis,3.10,0
-83251,2022-11-18,"Soljanka mit saurer Sahne, Brötchen",2.70,0
-83252,2022-11-18,"Gemüsefrikadelle mit Soja-Tomaten-Kräuter-Dip, dazu bunte Karotten und Pommes frites",2.40,1
+83248,2022-11-17,Schweine-Leberragout in Rotweinsoße an Kartoffelröstis und Krautsalat,2.7,0
+83249,2022-11-17,"Camembert gebacken mit Tomatensauce oder Preiselbeeren an Pommes frites, dazu Eichblattsalat",3.1,1
+83250,2022-11-17,MensaInternational-Kolumbien: Hähnchengeschnetzeltes mit Reis,3.1,0
+83251,2022-11-18,"Soljanka mit saurer Sahne, Brötchen",2.7,0
+83252,2022-11-18,"Gemüsefrikadelle mit Soja-Tomaten-Kräuter-Dip, dazu bunte Karotten und Pommes frites",2.4,1
 83253,2022-11-18,"Rote Linsen mit Kokos-Curry, dazu einen Soja-Bananen-Shake",1.95,1
-83254,2022-11-18,Thailändisches Putengeschnetzeltes mit Jasmin-Duftreis,3.10,0
+83254,2022-11-18,Thailändisches Putengeschnetzeltes mit Jasmin-Duftreis,3.1,0
+83255,2022-11-21,Vegetarische Sojabolognese auf Spaghetti,1.95,1
+83256,2022-11-21,Gebratene Schupfnudeln mit Pesto auf Kassler-Sauerkraut,2.70,0
+83257,2022-11-21,Bunter Gemüse-Mix mit Schnittlauch-Rahm anKartoffelrösti,1.95,1
+83258,2022-11-21,"Tintenfischringe mit Knoblauch-Dip, Pommes frites und buntem Salat",3.60,0
+83259,2022-11-22,"Milchreis mit Sauerkirschen, Zucker und Zimt",1.95,1
+83260,2022-11-22,"MensaInternational-Ägypten: Pangasiusfilet mit Zitrone, Olivenöl und Kartoffeln",3.60,0
+83261,2022-11-22,"Zartweizen mit Maronen und Kürbis, dazu Erbsenguacomole",1.95,1
+83262,2022-11-22,"Hähnchenbrust mit Bohnen-Mais-Gemüse in scharfer Barbecuesoße, dazu Kartoffelecken",3.10,0
+83263,2022-11-23,Gabelspaghetti mit feurigem Tomaten-Mango-Belugalinsenragout,1.95,1
+83264,2022-11-23,"Schweinegeschnetzeltes mit grünem Pfeffer, Mandelbrokkoli und Spätzle",2.70,0
+83265,2022-11-23,MensaInternational Kamerun : Gebratene Kidneybohnen mit gebackenen Kartoffeln,2.70,1
+83266,2022-11-23,Glasiertes Putensteak mit BIO- Sommergemüse und Pommes frites,3.60,0
+83267,2022-11-24,Süßkartoffel-Kokos-Soja-Curry mit Tomatenbulgur,1.95,1
+83268,2022-11-24,Bunte Bratwurstpfanne mit Gemüse und Pommes Chips,2.70,0
+83269,2022-11-24,"Tortelloni ""Ricotta"" mit Tomatensoße",2.10,1
+83270,2022-11-24,"Rinderhacksteak mit Hirtenkäse, dazu Letschogemüse und Pommes frites",4.10,0
+83271,2022-11-25,"Broccolicremesuppe, 2 hausgemachte Eierkuchen mit Apfelmus, Zimt-Zucker und Sahnedip",1.95,1
+83272,2022-11-25,MensaInternational-Finnland: Kartoffelauflauf mit Schinken,2.70,0
+83273,2022-11-25,Tomaten-Chili-Knoblauch-Spaghetti mit Tofu,1.95,1
+83274,2022-11-25,Hähnchenschnitzel mit Gemüse-Sombrero und Pommes frites,3.10,0
