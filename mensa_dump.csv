@@ -3386,22 +3386,43 @@ id,date,meal,price,is_vegetarian
 83253,2022-11-18,"Rote Linsen mit Kokos-Curry, dazu einen Soja-Bananen-Shake",1.95,1
 83254,2022-11-18,Thailändisches Putengeschnetzeltes mit Jasmin-Duftreis,3.1,0
 83255,2022-11-21,Vegetarische Sojabolognese auf Spaghetti,1.95,1
-83256,2022-11-21,Gebratene Schupfnudeln mit Pesto auf Kassler-Sauerkraut,2.70,0
+83256,2022-11-21,Gebratene Schupfnudeln mit Pesto auf Kassler-Sauerkraut,2.7,0
 83257,2022-11-21,Bunter Gemüse-Mix mit Schnittlauch-Rahm anKartoffelrösti,1.95,1
-83258,2022-11-21,"Tintenfischringe mit Knoblauch-Dip, Pommes frites und buntem Salat",3.60,0
+83258,2022-11-21,"Tintenfischringe mit Knoblauch-Dip, Pommes frites und buntem Salat",3.6,0
 83259,2022-11-22,"Milchreis mit Sauerkirschen, Zucker und Zimt",1.95,1
-83260,2022-11-22,"MensaInternational-Ägypten: Pangasiusfilet mit Zitrone, Olivenöl und Kartoffeln",3.60,0
+83260,2022-11-22,"MensaInternational-Ägypten: Pangasiusfilet mit Zitrone, Olivenöl und Kartoffeln",3.6,0
 83261,2022-11-22,"Zartweizen mit Maronen und Kürbis, dazu Erbsenguacomole",1.95,1
-83262,2022-11-22,"Hähnchenbrust mit Bohnen-Mais-Gemüse in scharfer Barbecuesoße, dazu Kartoffelecken",3.10,0
+83262,2022-11-22,"Hähnchenbrust mit Bohnen-Mais-Gemüse in scharfer Barbecuesoße, dazu Kartoffelecken",3.1,0
 83263,2022-11-23,Gabelspaghetti mit feurigem Tomaten-Mango-Belugalinsenragout,1.95,1
-83264,2022-11-23,"Schweinegeschnetzeltes mit grünem Pfeffer, Mandelbrokkoli und Spätzle",2.70,0
-83265,2022-11-23,MensaInternational Kamerun : Gebratene Kidneybohnen mit gebackenen Kartoffeln,2.70,1
-83266,2022-11-23,Glasiertes Putensteak mit BIO- Sommergemüse und Pommes frites,3.60,0
+83264,2022-11-23,"Schweinegeschnetzeltes mit grünem Pfeffer, Mandelbrokkoli und Spätzle",2.7,0
+83265,2022-11-23,MensaInternational Kamerun : Gebratene Kidneybohnen mit gebackenen Kartoffeln,2.7,1
+83266,2022-11-23,Glasiertes Putensteak mit BIO- Sommergemüse und Pommes frites,3.6,0
 83267,2022-11-24,Süßkartoffel-Kokos-Soja-Curry mit Tomatenbulgur,1.95,1
-83268,2022-11-24,Bunte Bratwurstpfanne mit Gemüse und Pommes Chips,2.70,0
-83269,2022-11-24,"Tortelloni ""Ricotta"" mit Tomatensoße",2.10,1
-83270,2022-11-24,"Rinderhacksteak mit Hirtenkäse, dazu Letschogemüse und Pommes frites",4.10,0
+83268,2022-11-24,Bunte Bratwurstpfanne mit Gemüse und Pommes Chips,2.7,0
+83269,2022-11-24,"Tortelloni ""Ricotta"" mit Tomatensoße",2.1,1
+83270,2022-11-24,"Rinderhacksteak mit Hirtenkäse, dazu Letschogemüse und Pommes frites",4.1,0
 83271,2022-11-25,"Broccolicremesuppe, 2 hausgemachte Eierkuchen mit Apfelmus, Zimt-Zucker und Sahnedip",1.95,1
-83272,2022-11-25,MensaInternational-Finnland: Kartoffelauflauf mit Schinken,2.70,0
+83272,2022-11-25,MensaInternational-Finnland: Kartoffelauflauf mit Schinken,2.7,0
 83273,2022-11-25,Tomaten-Chili-Knoblauch-Spaghetti mit Tofu,1.95,1
-83274,2022-11-25,Hähnchenschnitzel mit Gemüse-Sombrero und Pommes frites,3.10,0
+83274,2022-11-25,Hähnchenschnitzel mit Gemüse-Sombrero und Pommes frites,3.1,0
+83275,2022-11-28,MensaInternational-Türkei: Rote Linsensuppe mit Fladenbrot,1.95,1
+83276,2022-11-28,Spirelli mit Bolognesesoße und Reibekäse,2.70,0
+83277,2022-11-28,"Broccoli-Nuggets mit Karottengemüse, Kartoffelpüree mit Röstzwiebeln",2.40,1
+83278,2022-11-28,"Hähnchenbruststeak mit Kokos-Curry-Soße, Zuckerschoten und Jasminreis",3.60,0
+83279,2022-11-29,"Süßkartoffelcurry mit Kichererbsen und Blattspinat, dazu Basmatireis",1.95,1
+83280,2022-11-29,Chili con Carne mit Kartoffel Wedges,3.10,0
+83281,2022-11-29,Waldpilzragout mit Lauchzwiebeln und Semmelknödeln,2.40,1
+83282,2022-11-29,"Schweinesteak ""Lugano"" mit Tomaten-Schinkenragout gratiniert, Buttererbsen und Crinkle Pommes",3.60,0
+83283,2022-11-30,"Tortellini ""Tricolore"" mit Tomatensoße und Reibekäse",1.95,0
+83284,2022-11-30,"Kartoffel-Erbseneintopf mit Schweinefleisch und Wiener Wurst, dazu 1 Brötchen",2.70,0
+83285,2022-11-30,Seelachsfilet mit Schwarzwurzel-Möhren-Ragout und grünen Bandnudeln,3.60,0
+83286,2022-11-30,Steckrüben-Bohnen-Paprika-Curry mit Chilikartoffeln,2.10,1
+83287,2022-11-30,MensaInternational-Kolumbien: Arroz con Pollo,2.70,0
+83288,2022-12-01,"Weihnachtssuppe mit frischem Ingwer und Orange, dazu ein Mehrkornbrötchen",1.95,1
+83289,2022-12-01,Glühweingulasch mit Mandelrosenkohl und Semmelknödeln,4.10,0
+83290,2022-12-01,"Sojageschnetzeltes mit Waldpilzen, Apfel-Zimt-Rotkohl und Kartoffelklöße",2.10,1
+83291,2022-12-01,"Hähnchen-Brustfilet in Kräuter-Käsesoße, dazu Broccoli und Herzoginkartoffeln",3.60,0
+83292,2022-12-02,MensaInternational-Kolumbien: Linsen-Reis-Suppe mit zwei gekochten Eiern,1.95,1
+83293,2022-12-02,Jagdwurstschnitzel mit Tomatensoße und Bio-Spirelli,2.70,0
+83294,2022-12-02,Gemüsepaella mit Vollkornreis und Walnüssen,1.95,1
+83295,2022-12-02,Putenschnitzel mit Paprika-Maisgemüse und Pommes frites,3.10,0
