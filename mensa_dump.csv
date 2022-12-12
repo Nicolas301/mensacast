@@ -3427,22 +3427,42 @@ id,date,meal,price,is_vegetarian
 83294,2022-12-02,Gemüsepaella mit Vollkornreis und Walnüssen,1.95,1
 83295,2022-12-02,Putenschnitzel mit Paprika-Maisgemüse und Pommes frites,3.1,0
 83296,2022-12-05,MensaInternational Ägypten: Okraschoten in Tomatensauce mit Reis,1.95,1
-83297,2022-12-05,Bunte Gemüse-Nudelpfanne,2.70,1
-83298,2022-12-05,Schupfnudel-Kürbis-Champignonpfanne mit Hirtenkäse-Quark-Dip,2.10,1
-83299,2022-12-05,"Putensteak in Senf-Sahnesoße, Brokkoligemüse, Pommes Twister",3.60,0
-83300,2022-12-06,Sojasteak mit rotem Zwiebelgemüse und Süßkartoffelpüree,2.40,1
-83301,2022-12-06,Pfannengyros vom Schwein mit Tzatziki und Weißkrautsalat an Pommes frites,3.10,0
+83297,2022-12-05,Bunte Gemüse-Nudelpfanne,2.7,1
+83298,2022-12-05,Schupfnudel-Kürbis-Champignonpfanne mit Hirtenkäse-Quark-Dip,2.1,1
+83299,2022-12-05,"Putensteak in Senf-Sahnesoße, Brokkoligemüse, Pommes Twister",3.6,0
+83300,2022-12-06,Sojasteak mit rotem Zwiebelgemüse und Süßkartoffelpüree,2.4,1
+83301,2022-12-06,Pfannengyros vom Schwein mit Tzatziki und Weißkrautsalat an Pommes frites,3.1,0
 83302,2022-12-06,"Tomatensuppe, 3 Quarkkäulchen mit Sauerkirsch-Gelee, Zimtzucker und Sahnedip",1.95,1
-83303,2022-12-06,Thüringer Bratwurst aus Oberweißbach mit Sauerkraut und Kartoffelpüree,3.60,0
+83303,2022-12-06,Thüringer Bratwurst aus Oberweißbach mit Sauerkraut und Kartoffelpüree,3.6,0
 83304,2022-12-07,3 gekochte Eier in pikanter Senfsoße mit Petersilienkartoffeln,1.95,1
-83305,2022-12-07,Ungarische Hackfleischpfanne mit Pommes Chips,2.70,0
-83306,2022-12-07,"Tofu in Sesam-Tempura auf Tomaten-Gemüsesugo, dazu Vollkornnudeln und Salat",2.40,1
-83307,2022-12-07,"Seelachs mit Blattspinat, Mozzarella und Mandeln überbacken, dazu Tomaten-Vollkornreis",3.60,0
+83305,2022-12-07,Ungarische Hackfleischpfanne mit Pommes Chips,2.7,0
+83306,2022-12-07,"Tofu in Sesam-Tempura auf Tomaten-Gemüsesugo, dazu Vollkornnudeln und Salat",2.4,1
+83307,2022-12-07,"Seelachs mit Blattspinat, Mozzarella und Mandeln überbacken, dazu Tomaten-Vollkornreis",3.6,0
 83308,2022-12-08,Makkaroni-Tomaten-Brokkoli-Auflauf mit Basilikumsoße,1.95,1
-83309,2022-12-08,Paniertes Schweineschnitzel mit Schwarzwurzel-Gemüse und Wedges,3.60,0
-83310,2022-12-08,MensaInternational-China: Gebratenes Gemüse mit Reis,2.40,1
-83311,2022-12-08,"Reispfanne ""Spanische Art"" mit Shrimps, Tomaten, Paprika und gegrillter Hähnchenkeule",3.10,0
-83312,2022-12-09,"Thüringer Kartoffelsuppe mit Wiener Wurst, dazu 1 Mehrkornbrötchen",2.70,0
+83309,2022-12-08,Paniertes Schweineschnitzel mit Schwarzwurzel-Gemüse und Wedges,3.6,0
+83310,2022-12-08,MensaInternational-China: Gebratenes Gemüse mit Reis,2.4,1
+83311,2022-12-08,"Reispfanne ""Spanische Art"" mit Shrimps, Tomaten, Paprika und gegrillter Hähnchenkeule",3.1,0
+83312,2022-12-09,"Thüringer Kartoffelsuppe mit Wiener Wurst, dazu 1 Mehrkornbrötchen",2.7,0
 83313,2022-12-09,Vegan gefüllte Paprikaschote auf Tomatensoße mit Kräuterreis,1.95,1
-83314,2022-12-09,Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauch-Quark und Blattsalat,2.70,1
-83315,2022-12-09,"Schweinesteak ""Strindberg"" mit Zwiebel-Senfkruste, buntes BIO-Gemüse und Pommes frites",3.60,0
+83314,2022-12-09,Kartoffel-Kürbiskernrösti mit Tomaten-Schnittlauch-Quark und Blattsalat,2.7,1
+83315,2022-12-09,"Schweinesteak ""Strindberg"" mit Zwiebel-Senfkruste, buntes BIO-Gemüse und Pommes frites",3.6,0
+83316,2022-12-12,Scharfes Kürbisgemüse mit Linsen und Rucola auf Penne Rigate,1.95,1
+83317,2022-12-12,"Putengeschnetzeltes ""Italienische Art"" mit Reis",3.10,0
+83318,2022-12-12,Rührei mit Kräutern und Zwiebeln an Rahmspinat und Petersilienkartoffeln,2.40,1
+83319,2022-12-12,Schweinerückensteak in Pfeffersoße mit Gurkengemüse und Kartoffelbällchen,3.60,0
+83320,2022-12-13,Kichererbsen-Gemüse-Curry mit Basmatireis,1.95,1
+83321,2022-12-13,Hackbratenmit Hirtenkäse in Kräuter-Rahmsoße mit Fingermöhren und Petersilienkartoffeln,2.70,0
+83322,2022-12-13,Panierter Blumenkohl mit holländischer Soße und Petersiliekartoffeln,2.10,1
+83323,2022-12-13,"Hähnchenbrustfilet ""Formaggio"" mit Tomaten-Zucchini-Gemüse und Pommes frites",3.60,0
+83324,2022-12-14,"Spaghetti mit Bolognese von roten Linsen, gerne auch als vegane Variante",1.95,0
+83325,2022-12-14,MensaInternational-China: Gebackener Fisch mit süß-saurer Sauce und Ingwerreis,3.10,0
+83326,2022-12-14,"Champignonpfanne an Heichelheimer Kartoffelpuffern, Salatgarnitur",3.10,1
+83327,2022-12-14,"Rindfleischpfanne ""Art Stroganoff"" mit Champignons, Gurken und Sauerrahm, dazu Spätzle",3.60,0
+83328,2022-12-15,MensaInternational-Indien: Dal mit Reis,1.95,1
+83329,2022-12-15,"Schlemmerfilet ""Italia"" mit Kräutersoße, Grillgemüse und Petersilienkartoffeln",4.10,0
+83330,2022-12-15,Mensainternational-Korea: Gebratener Tofu in Süß-scharfer Soße dazu Gemüsereis,2.40,1
+83331,2022-12-15,"Würzfleisch vom Schwein mit Champignons, Buttererbsen und Pommes frites",3.10,0
+83332,2022-12-16,"Broccoli-Cremesuppe, Germknödel, dazu Soße mit Vanillegeschmack und Heidelbeeren",1.95,1
+83333,2022-12-16,Currybratwurst mit Gewürz-Ketchupdip und Pommes frites,3.10,0
+83334,2022-12-16,"Gemüse-Couscous mit Tofu, Backpflaumen und Aprikosen-Tomaten-Relish",1.95,1
+83335,2022-12-16,"Hähnchenbruststreifen in Rucolasoße, dazu Bandnudeln mit Tomaten",3.10,0
